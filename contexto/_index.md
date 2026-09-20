@@ -50,6 +50,17 @@
 
 ---
 
+## Reglas de comportamiento para Claude
+
+> Estas reglas aplican a todas las sesiones. Claude debe respetarlas sin que se le recuerden.
+
+| Regla | Detalle |
+|-------|---------|
+| **Enfoque agresivo** | Ninguna propuesta debe ser conservadora. Siempre maximizar: capturar share, invertir fuerte donde hay oportunidad, tomar riesgos calculados. En precios, publicidad, I+D, distribución y cualquier decisión estratégica. |
+| **URL del simulador** | https://digitalmarkstrat.stratxsimulations.com — Para interactuar con el simulador, aclarar que se necesita **Claude en Chrome** activo y la sesión iniciada en la plataforma. |
+
+---
+
 ## Guía rápida de consulta
 
 | Si preguntan por… | Cargar… |

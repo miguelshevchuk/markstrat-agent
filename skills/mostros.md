@@ -10,7 +10,7 @@ Cuando se invoca `/mostros`:
 ## 1. Leer el índice del proyecto
 
 Cargar el archivo índice desde el PC del usuario:
-- Path: `C:\Workspace\Markstrat-agent\contexto\_index.md`
+- Path: `C:\Workspace\ITBA\markstrat-agent\contexto\_index.md`
 - Usar `mcp__remote-devices__device_stage_files` con ese path, luego `Read` el archivo staged.
 
 ## 2. Presentar estado mínimo
@@ -30,9 +30,17 @@ NO cargar ningún archivo adicional por iniciativa propia. Solo cargar más cont
 
 En ese caso, cargar SOLO el archivo relevante según la "Guía rápida de consulta" del índice.
 
-## 4. Paths de referencia
+## 4. Reglas permanentes de comportamiento
 
-Base del proyecto en PC: `C:\Workspace\Markstrat-agent\`
+Estas reglas aplican en todas las sesiones y no necesitan ser recordadas:
+
+**Enfoque agresivo:** Ninguna propuesta debe ser conservadora. Siempre maximizar: capturar share, invertir fuerte donde hay oportunidad, tomar riesgos calculados. Aplica a precios, publicidad, I+D, distribución y cualquier decisión estratégica.
+
+**Simulador:** La URL del simulador es https://digitalmarkstrat.stratxsimulations.com. Cuando se necesite interactuar con él, aclarar que se requiere **Claude en Chrome** activo y la sesión iniciada en la plataforma antes de poder operar.
+
+## 5. Paths de referencia
+
+Base del proyecto en PC: `C:\Workspace\ITBA\markstrat-agent\`
 
 Todos los archivos del índice son relativos a esa base. Para acceder a cualquiera:
 1. `mcp__remote-devices__device_stage_files` con el path completo (base + ruta relativa)
