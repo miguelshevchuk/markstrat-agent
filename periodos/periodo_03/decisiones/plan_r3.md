@@ -50,7 +50,8 @@ Gen-X es el 3° segmento en crecimiento (285k → 338k → 437k en P7) y paga pr
 | Producción planificada | **200k** (rango automático 160–240k) | **125k** (rango 100–150k) |
 | Medios | $1,800k | $2,250k |
 | Investigación publicidad | $200k | $250k |
-| Segmentos | Gen-Z 85% · Millennials 15% | Millennials 85% · Gen-X 15% |
+| Segmentos | Gen-Z 100% | Millennials 100% |
+| Por qué 100% | POMOST2 queda lejos del ideal de Millennials (diseño 3.6 vs 5.27) y canibalizaría a MOVE | POMOVE2 a $279 es percibido "barato" por Gen-X (ideal de precio 5.53) y Gen-X queda para POMOXI en P4 |
 | Objetivo perceptual (semánticas) | Diseño 4.0 · Potencia 2.3 · Precio 2.1 | Diseño 5.3 · Potencia 4.4 · Pantalla 4.4 · Precio 3.1 |
 
 ### 4.4 Marketing digital (mix de medios, % del presupuesto de la marca)
