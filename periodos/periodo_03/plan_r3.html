@@ -86,13 +86,17 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
       <nav class="tabs" role="tablist">
         <button class="tab" role="tab" aria-selected="true" data-tab="pasado">1 · Qué pasó y por qué</button>
         <button class="tab" role="tab" aria-selected="false" data-tab="plan">2 · Plan Ronda 3</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="moxi">3 · Gen-X y POMOXI</button>
       </nav>
     </div>
     <div class="subnav" id="sub-pasado">
       <a href="#resumen">Resumen</a><a href="#spi">SPI</a><a href="#industria">Industria</a><a href="#causas">Causas</a><a href="#segmentos">Segmentos</a><a href="#positivo">Lo positivo</a>
     </div>
     <div class="subnav" id="sub-plan" hidden>
-      <a href="#supuestos">Supuestos</a><a href="#competencia">Competencia</a><a href="#decisiones">Decisiones</a><a href="#presupuesto">Presupuesto</a><a href="#proyeccion">Proyección</a><a href="#riesgos">Riesgos</a>
+      <a href="#supuestos">Supuestos</a><a href="#competencia">Competencia</a><a href="#decisiones">Decisiones</a><a href="#precio-move">Precio MOVE</a><a href="#presupuesto">Presupuesto</a><a href="#proyeccion">Proyección</a><a href="#riesgos">Riesgos</a>
+    </div>
+    <div class="subnav" id="sub-moxi" hidden>
+      <a href="#mx-que">Qué es</a><a href="#mx-segmento">Por qué Gen-X</a><a href="#mx-comp">Competencia</a><a href="#mx-specs">Specs</a><a href="#mx-num">Números</a><a href="#mx-alt">Alternativas</a><a href="#mx-riesgos">Riesgos</a>
     </div>
   </div>
 </header>
@@ -172,7 +176,7 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
       <ul>
         <li>192 → 75 FTE. Ahorro de $2.4M, pero la cobertura cayó entre 5 y 15 pts.</li>
         <li>MOST en grandes superficies (60% de las compras de Gen-Z): 57.8% → 51.7%.</li>
-        <li>En P1 el exceso nos había costado ~$2.6M sin traer share: rendimientos decrecientes.</li>
+        <li>Impacto estimado: si las ventas por canal siguen a la cobertura, el recorte explica <b>~15–20k u</b> de las 32k que perdió MOST (~$1M de contribución y ~1.2–1.5 pts de share). No fue gratis.</li>
       </ul></div>
     <div class="card cause"><h3><span class="num">4</span>La competencia jugó más fuerte</h3>
       <ul>
@@ -210,7 +214,7 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
 <!-- ================= SECCIÓN 2 ================= -->
 <section class="panel" id="plan">
   <h1>Plan sugerido · Ronda 3</h1>
-  <p class="lead">Reposicionar las dos marcas sobre sus segmentos, recuperar distribución, defender Gen-Z frente a SOLO y preparar una tercera marca para Gen-X en P4.</p>
+  <p class="lead">Reposicionar las dos marcas sobre sus segmentos, defender Gen-Z frente a SOLO, recuperar distribución y concentrar toda la plata en Gen-Z y Millennials, los dos segmentos que más crecen y donde ya lideramos.</p>
 
   <h2 id="supuestos">Supuestos</h2>
   <div class="grid g4">
@@ -240,42 +244,57 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
       <tr><td><input type="checkbox"></td><td>Portafolio</td><td>Operación</td><td>Modificar → POMOST2</td><td>Modificar → POMOVE2</td><td>Specs casi sobre el ideal del segmento. Ya cargado: confirmar.</td></tr>
       <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Precio (PVP)</td><td><b>$175</b></td><td><b>$279</b></td><td>Óptimos del conjoint ($177 / $286), por debajo de SOLO ($280) y LOCK ($200).</td></tr>
       <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Producción</td><td><b>200k</b> (160–240k)</td><td><b>125k</b> (100–150k)</td><td>No repetir el quiebre de stock de MOVE (demanda P2 ~113k).</td></tr>
-      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Publicidad: medios / investigación</td><td>$1,800k / $200k</td><td>$2,250k / $250k</td><td>Relanzamiento: comunicar la nueva percepción. ~10% en investigación.</td></tr>
-      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Segmentos objetivo</td><td>Gen-Z 100%</td><td>Millennials 100%</td><td>Concentrar todo: POMOST2 queda lejos del ideal de Millennials y ahí ya está MOVE. POMOVE2 se ve "barato" para Gen-X, y ese segmento queda para POMOXI en P4.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Publicidad: medios / investigación</td><td>$1,800k / $200k</td><td>$2,700k / $300k</td><td>Relanzamiento en el segmento que más crece (+183%), contra SOLO. MOVE todavía se percibe caro (3.70 vs ideal 3.11). ~10% en investigación.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Segmentos objetivo</td><td>Gen-Z 100%</td><td>Millennials 100%</td><td>Concentrar todo: POMOST2 queda lejos del ideal de Millennials y ahí ya está MOVE. POMOVE2 se ve "barato" para Gen-X, que además van a pelear los relanzamientos de T, L y R.</td></tr>
       <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Objetivo perceptual (semánticas)</td><td>Diseño 4.0 · Potencia 2.3 · Precio 2.1</td><td>Diseño 5.3 · Potencia 4.4 · Pantalla 4.4 · Precio 3.1</td><td>Ideales de Gen-Z y Millennials.</td></tr>
       <tr><td><input type="checkbox"></td><td>Marketing digital</td><td>Mix de medios: propio / pago / ganado / tradicional / exterior</td><td>15 / 20 / 30 / 20 / 15</td><td>20 / 25 / 25 / 18 / 12</td><td>MOST: Tradicional y Exterior con el mejor ROMI. MOVE: hábitos digitales de Millennials.</td></tr>
-      <tr><td><input type="checkbox"></td><td>Fuerza de ventas</td><td>FTE: especializadas / grandes superficies</td><td>18 / 40</td><td>25 / 22</td><td>75 → 105 FTE. Frena la caída de cobertura. Más allá de ~105 rinde poco.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Fuerza de ventas</td><td>FTE: especializadas / grandes superficies</td><td>22 / 45</td><td>28 / 26</td><td>75 → 121 FTE. Recuperar la cobertura de P1 en MOST (39% / 58%): el recorte nos costó ~15–20k u.</td></tr>
       <tr><td><input type="checkbox"></td><td>Fuerza de ventas</td><td>Digital: eCommerce / eStore</td><td>$90k / $20k</td><td>$110k / $40k</td><td>Mantener presencia online.</td></tr>
-      <tr><td><input type="checkbox"></td><td>I+D</td><td>Nuevo proyecto Sonite <b>POMOXI</b> (Gen-X)</td><td colspan="2">Func 10 · Diseño 9 · Batería 50 · Pantalla 20 · Potencia 70 · ~$2.3M <span class="pill chk">verificar costo</span></td><td>Tercera marca para P4: Gen-X crece a 437k y paga ~$400. Hoy tenemos 0.1% de share.</td></tr>
+      <tr><td><input type="checkbox"></td><td>I+D</td><td>Proyectos nuevos</td><td colspan="2"><b>Ninguno en R3</b> (POMOXI pospuesto)</td><td>Los rivales relanzan productos ya adaptados a Gen-X. Entrar tercero, sin awareness, no paga en P4. Ver pestaña 3.</td></tr>
       <tr><td><input type="checkbox"></td><td>Estudios</td><td>Qué comprar</td><td colspan="2">Todos los de Sonites + Benchmark + Previsión Vodites (~$580k)</td><td>Seguir de cerca a SOLO y a los relanzamientos.</td></tr>
-      <tr><td><input type="checkbox"></td><td>Potencia de marketing</td><td>Iniciativas (máx. 3)</td><td colspan="2">Influenciador de contenidos $215k · Reorientación $55k · App móvil $55k</td><td>Refuerzo digital para Gen-Z y Millennials.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Potencia de marketing</td><td>Iniciativas (máx. 3)</td><td colspan="2">Reorientación $55k · App móvil $55k · Email marketing $55k</td><td>Refuerzo digital barato. Los $215k del influenciador van a fuerza de ventas.</td></tr>
     </tbody>
   </table></div>
 
+  <h2 id="precio-move">¿$279 encaja con lo que pagan los Millennials?</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Conjoint Millennials (utilidad del precio)</h3>
+      <table class="tbl"><thead><tr><th class="n">Precio</th><th class="n">Utilidad</th></tr></thead><tbody>
+      <tr><td class="n">$132</td><td class="n">0.16</td></tr><tr><td class="n">$209</td><td class="n">0.61</td></tr>
+      <tr style="font-weight:700"><td class="n">$286</td><td class="n up">1.00 (máximo)</td></tr><tr><td class="n">$363</td><td class="n down">0.00</td></tr></tbody></table>
+      <p style="margin:8px 0 0;font-size:14px;color:var(--muted)">El precio pesa el 62.5% de la decisión de los Millennials (el más alto de todos los segmentos). La utilidad cae rápido por encima de ~$300: interpolando, $300 ≈ 0.8.</p></div>
+    <div class="card"><h3>Escala semántica de precio (1–7)</h3>
+      <ul><li>Ideal Millennials: <b>3.11</b>.</li>
+      <li>SOLO a $280 se percibe en <b>3.06</b>: $279 queda sobre el ideal una vez que la percepción se acomoda.</li>
+      <li>MOVE a $273 todavía se percibe en 3.70 por la inercia de los $390 de P1. Por eso el objetivo perceptual de precio 3.1 en la publicidad.</li>
+      <li>Margen: a $279 ~$57/u. A $285 serían ~$61/u (+$0.5M) con casi la misma utilidad, pero quedaríamos por encima de SOLO ($280).</li></ul>
+      <p style="margin:8px 0 0"><span class="pill ok">Veredicto</span> $279 está en el punto óptimo. $285 es la alternativa si SOLO sube precio o se va a Gen-Z.</p></div>
+  </div>
+
   <h2 id="presupuesto">Presupuesto ($10.6M)</h2>
   <div class="card">
-    <div class="barrow"><span>Publicidad MOVE</span><div class="track"><div class="bar" style="width:23.6%"></div></div><span class="n">$2,500k</span></div>
-    <div class="barrow"><span>Fuerza de ventas</span><div class="track"><div class="bar" style="width:24.8%"></div></div><span class="n">$2,630k</span></div>
-    <div class="barrow"><span>I+D POMOXI</span><div class="track"><div class="bar" style="width:21.7%"></div></div><span class="n">~$2,300k</span></div>
+    <div class="barrow"><span>Fuerza de ventas</span><div class="track"><div class="bar" style="width:28.6%"></div></div><span class="n">$3,030k</span></div>
+    <div class="barrow"><span>Publicidad MOVE</span><div class="track"><div class="bar" style="width:28.3%"></div></div><span class="n">$3,000k</span></div>
     <div class="barrow"><span>Publicidad MOST</span><div class="track"><div class="bar" style="width:18.9%"></div></div><span class="n">$2,000k</span></div>
     <div class="barrow"><span>Estudios</span><div class="track"><div class="bar" style="width:5.5%"></div></div><span class="n">$580k</span></div>
-    <div class="barrow"><span>Potencia de marketing</span><div class="track"><div class="bar" style="width:3.1%"></div></div><span class="n">$325k</span></div>
-    <div class="barrow" style="font-weight:700;border-top:1px solid var(--border);padding-top:8px"><span>Total</span><span></span><span class="n">~$10,335k</span></div>
-    <p style="margin:6px 0 0;color:var(--muted);font-size:13px">Margen de ~$265k para ajustar el costo real de POMOXI. Si sale más caro, recortar primero la investigación publicitaria y después la publicidad de MOST.</p>
+    <div class="barrow"><span>Potencia de marketing</span><div class="track"><div class="bar" style="width:1.6%"></div></div><span class="n">$165k</span></div>
+    <div class="barrow"><span>Sin gastar (contribución)</span><div class="track"><div class="bar" style="width:17.2%;background:var(--good)"></div></div><span class="n">$1,825k</span></div>
+    <div class="barrow" style="font-weight:700;border-top:1px solid var(--border);padding-top:8px"><span>Total gastado</span><span></span><span class="n">~$8,775k</span></div>
+    <p style="margin:6px 0 0;color:var(--muted);font-size:13px">Los ~$1.8M sin gastar suman directo a la contribución neta (SPI). Si se quiere ser más agresivo, el próximo destino es la publicidad de MOVE en Millennials.</p>
   </div>
 
   <h2 id="proyeccion">Proyección gruesa P3</h2>
   <div class="scroll"><table class="tbl">
     <thead><tr><th>Marca</th><th class="n">Unidades</th><th class="n">Precio venta − TC</th><th class="n">Contrib. antes mkt</th></tr></thead>
     <tbody>
-      <tr><td>MOST</td><td class="n">~200k</td><td class="n">$116 − $57 = $59</td><td class="n">~$11.8M</td></tr>
-      <tr><td>MOVE</td><td class="n">~125k</td><td class="n">$185 − $128 = $57</td><td class="n">~$7.1M</td></tr>
-      <tr><td><b>Total</b></td><td></td><td></td><td class="n"><b>~$18.9M</b> (P2: $16.4M)</td></tr>
+      <tr><td>MOST</td><td class="n">~205k</td><td class="n">$116 − $57 = $59</td><td class="n">~$12.1M</td></tr>
+      <tr><td>MOVE</td><td class="n">~130k</td><td class="n">$185 − $128 = $57</td><td class="n">~$7.4M</td></tr>
+      <tr><td><b>Total</b></td><td></td><td></td><td class="n"><b>~$19.5M</b> (P2: $16.4M)</td></tr>
     </tbody>
   </table></div>
   <div class="grid g4" style="margin-top:12px">
-    <div class="card kpi"><div class="lbl">Contribución neta P3</div><div class="val">≈ $8.4M</div><div class="delta up">vs $7.7M en P2</div></div>
-    <div class="card kpi"><div class="lbl">Sin I+D sería</div><div class="val">≈ $10.7M</div><div class="delta" style="color:var(--muted)">pero sin tercera marca en P4</div></div>
+    <div class="card kpi"><div class="lbl">Contribución neta P3</div><div class="val">≈ $10.5M</div><div class="delta up">vs $7.7M en P2</div></div>
+    <div class="card kpi"><div class="lbl">Contrib. antes de mkt</div><div class="val">≈ $19.5M</div><div class="delta up">con más cobertura y publicidad</div></div>
   </div>
 
   <h2 id="riesgos">Riesgos y contingencias</h2>
@@ -283,9 +302,113 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
     <div class="card"><h3>SOLO agresivo en Gen-Z</h3><p style="margin:0">Bajar MOST a ~$165 en P4 (con TC $57 aguanta) y reforzar la publicidad en Gen-Z.</p></div>
     <div class="card"><h3>Quiebre de stock en MOVE</h3><p style="margin:0">El plan de 125k cubre automáticamente hasta 150k.</p></div>
     <div class="card"><h3>Demanda de MOST menor</h3><p style="margin:0">El rango automático baja hasta 160k, con poco stock remanente.</p></div>
-    <div class="card"><h3>POMOXI más caro</h3><p style="margin:0">Ajustar specs (bajar pantalla o funcionalidades) antes de confirmar el proyecto.</p></div>
+    <div class="card"><h3>Gen-X sin nosotros</h3><p style="margin:0">Revisar en los resultados de P3 cómo quedaron los relanzamientos. Si dejan huecos, retomar POMOXI en R4.</p></div>
   </div>
   <div class="note" style="margin-top:16px">Nada de esto está cargado en el simulador. Detalle completo en <code>periodos/periodo_03/decisiones/plan_r3.md</code>.</div>
+</section>
+<!-- ================= SECCIÓN 3 ================= -->
+<section class="panel" id="moxi">
+  <h1>Gen-X y POMOXI</h1>
+  <div class="note" style="margin:8px 0 16px;border-left:4px solid var(--warn)"><b>Decisión: POMOXI se pospone.</b> El equipo confirma que T, L y R relanzan en R3 productos ya adaptados a Gen-X. Eso elimina nuestro principal argumento (los incumbentes estaban mal ajustados en diseño, funcionalidades y batería). Entraríamos terceros en P4, con awareness cero, contra dos marcas con ~85% de awareness y producto corregido. Abajo queda el análisis original como referencia, y lo retomamos con los resultados de P3.</div>
+  <p class="lead">Proyecto de I+D de Sonites que arrancaría en R3 para lanzar en P4 una tercera marca (MOXI) orientada a Gen-X. Sin Vodites, es la única palanca de crecimiento nuevo que tenemos en los próximos dos períodos.</p>
+
+  <h2 id="mx-que">Qué es</h2>
+  <div class="grid g4">
+    <div class="card kpi"><div class="lbl">Segmento</div><div class="val">Gen-X</div><div class="delta" style="color:var(--muted)">hoy 0.1% de share nuestro</div></div>
+    <div class="card kpi"><div class="lbl">Inversión I+D (R3)</div><div class="val">~$2.3M</div><div class="delta" style="color:var(--warn)">estimado: verificar en el simulador</div></div>
+    <div class="card kpi"><div class="lbl">Lanzamiento</div><div class="val">P4</div><div class="delta" style="color:var(--muted)">PVP objetivo ~$379–399</div></div>
+    <div class="card kpi"><div class="lbl">Margen por unidad</div><div class="val">~$105</div><div class="delta up">TONE ~$50–65 a $370</div></div>
+  </div>
+
+  <h2 id="mx-segmento">Por qué Gen-X</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Segmento</th><th class="n">Tamaño P2</th><th class="n">P3</th><th class="n">P7</th><th class="n">Crec. a P7</th><th class="n">Valor retail aprox. P2</th><th>Precio ideal (conjoint)</th><th>Nuestra presencia</th></tr></thead>
+    <tbody>
+      <tr><td><b>Gen-X</b></td><td class="n">285k</td><td class="n">338k</td><td class="n">437k</td><td class="n up">+53%</td><td class="n">~$105M</td><td>$439</td><td class="down">0.1% (nada)</td></tr>
+      <tr><td>Profs</td><td class="n">265k</td><td class="n">301k</td><td class="n">352k</td><td class="n">+33%</td><td class="n">~$95M</td><td>$414</td><td class="down">0.4%</td></tr>
+      <tr><td>Gen-Z</td><td class="n">395k</td><td class="n">468k</td><td class="n">881k</td><td class="n up">+123%</td><td class="n">$80M</td><td>$177</td><td class="up">MOST 34%</td></tr>
+      <tr><td>Millennials</td><td class="n">245k</td><td class="n">315k</td><td class="n">692k</td><td class="n up">+183%</td><td class="n">$70M</td><td>$286</td><td class="up">MOVE 20%</td></tr>
+      <tr><td>Baby Boomers</td><td class="n">193k</td><td class="n">189k</td><td class="n">147k</td><td class="n down">−24%</td><td class="n">—</td><td>$320</td><td>~10%</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid g2" style="margin-top:12px">
+    <div class="card pos"><h3>El segmento de mayor valor donde no estamos</h3><ul>
+      <li>Gen-X es probablemente el segmento con más facturación del mercado y paga más del doble que Gen-Z por unidad.</li>
+      <li>Crece +53% a P7, más que Profs (+33%), y BB se achica.</li>
+      <li>Con MOST y MOVE ya cubrimos Gen-Z y Millennials. Una tercera marca para Gen-X diversifica sin canibalizar.</li></ul></div>
+    <div class="card pos"><h3>Por qué Gen-X y no Profs</h3><ul>
+      <li>Profs pide potencia 84 y diseño 9: un producto más caro de desarrollar y producir.</li>
+      <li>En Profs ROCK tiene 52% y TONE 35%. Es más difícil de entrar.</li>
+      <li>Gen-X crece más y su ideal de diseño (5.8) es justo lo que TONE y LOOP no cumplen.</li></ul></div>
+  </div>
+
+  <h2 id="mx-comp">La competencia en Gen-X</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Marca</th><th class="n">Share Gen-X</th><th class="n">Unid. Gen-X</th><th class="n">PVP</th><th class="n">Coste base</th><th class="n">Pub. en Gen-X</th><th class="n">Func</th><th class="n">Diseño</th><th class="n">Batería</th><th class="n">Pantalla</th><th class="n">Potencia</th></tr></thead>
+    <tbody>
+      <tr><td>TONE (T)</td><td class="n">48.5%</td><td class="n">138k</td><td class="n">$370</td><td class="n">$196</td><td class="n">$1,590k</td><td class="n">5.51</td><td class="n down">4.92</td><td class="n down">5.28</td><td class="n">4.44</td><td class="n">5.31</td></tr>
+      <tr><td>LOOP (L)</td><td class="n">43.7%</td><td class="n">125k</td><td class="n">$427</td><td class="n">$219</td><td class="n">$1,430k</td><td class="n">4.70</td><td class="n down">4.91</td><td class="n down">4.69</td><td class="n">4.95</td><td class="n">5.08</td></tr>
+      <tr><td>ROCK (R)</td><td class="n">6.9%</td><td class="n">20k</td><td class="n">$365</td><td class="n">$216</td><td class="n">$550k</td><td class="n">5.51</td><td class="n down">4.77</td><td class="n down">5.61</td><td class="n">5.93</td><td class="n">5.28</td></tr>
+      <tr class="me"><td>POMOXI (esperado)</td><td class="n">—</td><td class="n">—</td><td class="n">~$389</td><td class="n">~$145</td><td class="n">—</td><td class="n">3.00</td><td class="n up">6.14</td><td class="n up">3.17</td><td class="n">4.33</td><td class="n">4.86</td></tr>
+      <tr><td><b>Ideal Gen-X</b></td><td></td><td></td><td></td><td></td><td></td><td class="n"><b>3.19</b></td><td class="n"><b>5.79</b></td><td class="n"><b>3.39</b></td><td class="n"><b>4.47</b></td><td class="n"><b>4.78</b></td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:8px">Valores de percepción (escalas semánticas 1–7). La percepción de POMOXI es una estimación con la fórmula del manual.</p>
+  <div class="grid g2">
+    <div class="card pos"><h3>La oportunidad</h3><ul>
+      <li><b>Es un duopolio sin ajuste fino:</b> TONE + LOOP tienen el 92% de Gen-X, pero los dos quedan cortos en <b>diseño</b> (4.9 vs 5.8) y se pasan en <b>funcionalidades y batería</b> (5.5 vs 3.2 y 5.3 vs 3.4).</li>
+      <li>Exceso de specs = coste alto ($196–219). POMOXI da lo que Gen-X pide con ~$145 de coste: <b>más margen a igual precio</b>, o precio más bajo con margen similar.</li>
+      <li>T y L están en guerra de precios (TONE $448 → $370): les queda menos margen para defenderse de un entrante.</li>
+      <li>Si SOLO (S) se va a Gen-Z, es poco probable que también entre a Gen-X: el único entrante seríamos nosotros (o R, que hoy tiene solo 6.9%).</li></ul></div>
+    <div class="card cause"><h3>La amenaza (siendo honestos)</h3><ul>
+      <li>En el mapa MDS, TONE (−8.4 / 7.0 / 7.0) y LOOP (−11.3 / 6.9 / 5.6) están <b>cerca del ideal</b> de Gen-X (−10.2 / 4.6 / 7.0). No es un segmento vacío.</li>
+      <li>T invirtió $4.1M y L $2.9M en I+D en P2. Es probable que relancen TONE/LOOP en P3 con mejor diseño y cierren parte de la brecha.</li>
+      <li>Entramos de cero en awareness: el lanzamiento en P4 necesita publicidad fuerte (~$1.8M) y vendedores en especializadas (49% de las compras de Gen-X).</li></ul></div>
+  </div>
+
+  <h2 id="mx-specs">Specs propuestas</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Atributo</th><th class="n">POMOXI</th><th class="n">Percepción esperada</th><th class="n">Ideal Gen-X (semántico)</th><th>Conjoint Gen-X</th><th>Criterio</th></tr></thead>
+    <tbody>
+      <tr><td>Funcionalidades</td><td class="n">10</td><td class="n">3.0</td><td class="n">3.19</td><td>—</td><td>Menos que TONE (16) y LOOP (14): baja el coste</td></tr>
+      <tr><td>Diseño</td><td class="n">9</td><td class="n">6.1</td><td class="n">5.79</td><td>9–10 óptimo</td><td>Nuestro diferencial frente a TONE/LOOP (7)</td></tr>
+      <tr><td>Batería</td><td class="n">50</td><td class="n">3.2</td><td class="n">3.39</td><td>—</td><td>Gen-X no la valora: no pagar por ella</td></tr>
+      <tr><td>Pantalla</td><td class="n">24</td><td class="n">4.3</td><td class="n">4.47</td><td>15–27 (plano)</td><td>Al nivel de TONE</td></tr>
+      <tr><td>Potencia</td><td class="n">66</td><td class="n">4.9</td><td class="n">4.78</td><td>72 óptimo</td><td>Entre el ideal semántico y el conjoint</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:8px">Coste base estimado ~$145 (POMOVE2, con 7/8/49/26/64, cuesta $127). El simulador muestra el número real al cargar el proyecto.</p>
+
+  <h2 id="mx-num">Números: escenarios P4 (Gen-X ~360k u)</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Escenario</th><th class="n">Share Gen-X</th><th class="n">Unidades</th><th class="n">Contrib. antes mkt</th><th class="n">Marketing lanzamiento</th><th class="n">Contrib. después mkt</th></tr></thead>
+    <tbody>
+      <tr><td>Conservador</td><td class="n">10%</td><td class="n">~36k</td><td class="n">~$3.8M</td><td class="n">~$2.5M</td><td class="n">~+$1.3M</td></tr>
+      <tr><td>Base</td><td class="n">15%</td><td class="n">~54k</td><td class="n">~$5.7M</td><td class="n">~$2.5M</td><td class="n up">~+$3.2M</td></tr>
+      <tr><td>Optimista</td><td class="n">20%</td><td class="n">~72k</td><td class="n">~$7.6M</td><td class="n">~$2.5M</td><td class="n up">~+$5.1M</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:8px">Supuestos: PVP $389, precio de venta ~$252 (66% del PVP), TC ~$145, margen ~$105/u. En el escenario base el I+D de $2.3M se recupera en ~1 período, y desde P5 la marca suma contribución en un segmento que sigue creciendo.</p>
+
+  <h2 id="mx-alt">Alternativas para los mismos $2.3M</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Opción</th><th>Evidencia</th><th>Retorno esperado</th><th>Veredicto</th></tr></thead>
+    <tbody>
+      <tr><td>Más publicidad en MOST/MOVE</td><td>Experimento P2: +pub en MOST da +$51k de contribución y +0.7–1.2 pts de awareness. Awareness ya en 84–85% en sus segmentos. El instructor sugiere incluso bajarla.</td><td>Bajo: rendimientos decrecientes</td><td><span class="pill chk">No, más allá del plan</span></td></tr>
+      <tr><td>Más fuerza de ventas</td><td>Experimento P2: +SF en MOST da +$215k. MOVE −$269k. El recorte de P2 costó 8–15 pts de cobertura, ~15–20k u en MOST.</td><td>Medio: recuperar cobertura sí paga</td><td><span class="pill ok">Sí: 75 → 121 FTE</span></td></tr>
+      <tr><td>No invertir (guardar contribución)</td><td>P3: +$2.3M de contribución neta (≈$10.7M vs $8.4M).</td><td>Mejora el SPI de P3. Concentra todo en los dos segmentos que más crecen, donde ya lideramos</td><td><span class="pill ok">Elegido (con más SF y publicidad en MOVE)</span></td></tr>
+      <tr><td><b>POMOXI</b></td><td>Segmento grande, sin presencia nuestra, incumbentes sobre-especificados y caros.</td><td>Con rivales relanzados: 5–10% de share → ~$0 a +$1.3M en P4, sin recuperar el I+D en el primer año</td><td><span class="pill chk">Pospuesto</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note" style="margin-top:12px"><b>Dónde va la plata de POMOXI:</b> +16 vendedores para recuperar la cobertura de MOST (la caída de P2 nos costó ~15–20k u), +$500k de publicidad para el relanzamiento de MOVE en Millennials (+183% a P7) y el resto (~$1.8M) queda como contribución neta, que mejora el SPI de P3.</div>
+
+  <h2 id="mx-riesgos">Riesgos y mitigación</h2>
+  <div class="grid g2">
+    <div class="card"><h3>TONE/LOOP relanzan con mejor diseño en P3</h3><p style="margin:0">Lo veremos en los resultados de P3, antes de lanzar. Si cierran la brecha, MOXI puede lanzarse más barato ($349) usando la ventaja de coste.</p></div>
+    <div class="card"><h3>El I+D sale más caro que $2.3M</h3><p style="margin:0">Bajar potencia (66 → 60) o pantalla (24 → 20) antes de confirmar. No pasar de ~$2.6M.</p></div>
+    <div class="card"><h3>Presupuesto de P4 para lanzar</h3><p style="margin:0">Sin Vodites, P4 tiene ~$10.6M libres: alcanza para lanzar MOXI (~$2.5M) y sostener MOST y MOVE.</p></div>
+    <div class="card"><h3>Golpe al SPI de P3</h3><p style="margin:0">−$2.3M de contribución en P3. A cambio, una tercera fuente de ingresos desde P4 con un margen por unidad bastante mayor que el de TONE.</p></div>
+  </div>
 </section>
 </main>
 <footer>Fuente: TeamExport P1 y P2 + simulador Ronda 3 · Mostros</footer>
@@ -298,11 +421,12 @@ footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
     document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('active',p.id===id);});
     document.getElementById('sub-pasado').hidden=id!=='pasado';
     document.getElementById('sub-plan').hidden=id!=='plan';
+    document.getElementById('sub-moxi').hidden=id!=='moxi';
     try{localStorage.setItem('mostros-tab',id);}catch(e){}
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab);window.scrollTo({top:0});});});
   var saved=null;try{saved=localStorage.getItem('mostros-tab');}catch(e){}
-  if(saved==='plan')show('plan');
+  if(saved==='plan'||saved==='moxi')show(saved);
 })();
 </script>
 </body>
