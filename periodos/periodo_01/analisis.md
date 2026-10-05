@@ -1,6 +1,6 @@
 # Análisis y Reflexiones — Período 01
 
-> **Estado:** Pre-ronda — análisis antes de conocer los resultados. Completar con reflexiones post-ronda cuando lleguen los informes.
+> **Estado:** ✅ Pre y post-ronda completos.
 
 ---
 
@@ -30,45 +30,20 @@
 
 ---
 
-## Post-ronda (a completar con resultados)
+## Post-ronda (con resultados reales)
 
 ### ¿Qué salió bien?
-
-1. 
-2. 
+1. **Volumen MOST:** 141k → 189k (+34%). Gen-Z 46.6% de share.
+2. **Inventario MOVE liquidado:** 52k u vendidas + 12k producidas, inventario final 0.
+3. **Unit share 22.2%** (2° de la industria), lo que sostuvo el SPI en 3er lugar.
 
 ### ¿Qué salió mal?
+1. **Fuerza de ventas sobredimensionada:** $3,987k (3x la competencia). Se comió ~$2.6M de contribución.
+2. **Contribución neta cayó** $15.8M → $12.2M (4° de 5). Somos 2° en unidades pero 4° en valor: vendemos barato.
+3. **MOVE sigue sin posicionamiento:** se vendió el stock pero con precio promedio de venta de $258 y contribución de solo $3.75M.
 
-1. 
-2. 
-
-### Hipótesis que se confirmaron
-
-- 
-
-### Hipótesis que se refutaron
-
-- 
-
----
-
-## Decisiones clave para Ronda 2
-
-| Área | Decisión a tomar | Prioridad | Info necesaria |
-|------|-----------------|-----------|----------------|
-| Precio MOST | ¿Mantener $182 o subir? | Alta | Margen contribución R1 |
-| Inventario MOVE | ¿Bajar precio más? ¿Liquidar? | Alta | Unidades vendidas MOVE R1 |
-| I+D MOST | ¿Mejorar diseño/funciones? | Alta | Conjoint Analysis R1 |
-| I+D MOVE | ¿Reformular specs para Millennials? | Alta | Semantic Scales + Conjoint R1 |
-| Nuevo Sonite | ¿Lanzar marca Profesionales? | Media | Market Forecast + Conjoint R1 |
-| Vodites | ¿Aumentar inversión? ¿Cuándo lanzar? | Media | Market Forecast Vodites R1 |
-| Publicidad | ¿Cambiar mix de medios? | Media | Ad Experiment + Consumer Panel R1 |
-
-## Preguntas abiertas para Ronda 2
-
-1. ¿El precio $182 de MOST generó el volumen esperado en Gen-Z? ¿O comimos margen sin compensar con volumen?
-2. ¿Logró MOVE vender el inventario de 52k + los 10k producidos?
-3. ¿La competencia reaccionó bajando precios en respuesta a MOST?
-4. ¿Qué tan importante es el diseño para Gen-Z según el Conjoint? ¿Tiene sentido mejorar MOST diseño de 5 a 7?
-5. ¿Hay oportunidad real en Profesionales para nosotros, o TRIPLET/ROCKET tienen demasiado lock-in?
-6. ¿El mercado Vodite va a arrancar en R2 o R3? ¿Necesitamos invertir más YA?
+### Hipótesis
+- ✅ Confirmada: el precio $182 trajo volumen en Gen-Z.
+- ✅ Confirmada: la competencia bajó precios (TONE, ROCK, LOOP, SOLO, SOFT).
+- ❌ Refutada: que el volumen compensara el margen. La contribución neta cayó.
+- ⚠️ El SPI quedó 3° por muy poco (944 vs R 929): posición frágil.

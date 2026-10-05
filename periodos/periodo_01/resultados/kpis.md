@@ -1,7 +1,7 @@
 # KPIs — Período 01
 
-> **Estado:** Ronda 1 en curso — resultados pendientes.
-> Los datos de abajo son el **baseline de Período 0** (situación de partida).
+> **Estado:** ✅ Resultados R1 cargados (fuente: `TeamExport_Periodo_1.xlsx`).
+> Arriba: baseline P0. Abajo: resultados reales de R1.
 
 ---
 
@@ -67,39 +67,75 @@
 
 ---
 
-## Resultados Ronda 1 (a completar cuando salgan)
+## Resultados Ronda 1 (Período 1) — DATOS REALES
 
-### SPI
-| Métrica | Valor | vs. P0 | vs. Competencia (avg) |
-|---------|-------|--------|----------------------|
-| SPI     | —     | —      | —                    |
+### SPI (Índice de precio de la acción) — ranking
+| # | Empresa | SPI P1 | Δ vs P0 |
+|---|---------|--------|---------|
+| 1 | T | 1,191 | +19% |
+| 2 | L | 1,130 | +13% |
+| **3** | **M (Mostros)** | **944** | **−6%** |
+| 4 | R | 929 | −7% |
+| 5 | S | 855 | −14% |
+
+> Tercero, pero por apenas 15 puntos sobre R. Ya bajamos vs P0.
 
 ### Ventas y Market Share
+| Marca | Unidades | Ingresos | PVP | Precio prom. venta | MS unid. | MS valor |
+|-------|----------|----------|-----|--------------------|----------|----------|
+| MOST | 189.2k | $22,867k | $182 | $120.85 | 16.6% | 8.5% |
+| MOVE | 64.2k | $16,546k | $390 | $257.88 | 5.6% | 6.2% |
+| **Total** | **253.4k** | **$39,413k** | | | **22.2%** | **14.7%** |
 
-| Marca | Unidades vendidas | Ingresos | Market Share (unidades) | Market Share (valor) |
-|-------|------------------|----------|------------------------|----------------------|
-| MOST  |                  |          |                        |                      |
-| MOVE  |                  |          |                        |                      |
-| **Total empresa** | | | | |
+Mercado Sonites P1: ~1,142k u (+22% vs 939k P0) · ~$387M retail.
 
-### Finanzas Ronda 1
-
+### Finanzas R1
 | Concepto | Monto |
 |----------|-------|
-| Ingresos totales | |
-| Contribución neta | |
-| Gasto publicidad total | $4.0M ($1.5M MOST + $2.5M MOVE) |
-| Inversión estudios de mercado | $505,750 (14 estudios) |
-| Inversión I+D (Vodites) | $31,000 |
+| Ingresos | $39,413k |
+| CMV | −$18,671k |
+| Contribución antes de mkt | $20,741k |
+| Publicidad (medios + investigación) | −$4,000k |
+| Fuerza de ventas | **−$3,987k** (3x la competencia: L $1,421k, R $1,300k, S $1,442k, T $1,282k) |
+| Contribución después de mkt | $12,754k |
+| Estudios de mercado | −$568k |
+| I+D | $0 |
+| **Contribución neta / EBT** | **$12,186k** (4° de 5) |
 
-### Inventario final Ronda 1
+### Contribución por marca R1
+| | MOST | MOVE |
+|--|------|------|
+| Ingresos | $22,867k | $16,546k |
+| CMV | −$10,864k | −$7,807k |
+| Contrib. antes mkt | $12,003k | $8,738k |
+| Publicidad | −$1,500k | −$2,500k |
+| Fuerza de ventas | −$1,503k | −$2,485k |
+| **Contrib. después mkt** | **$9,000k** | **$3,754k** |
 
-| Marca | Inventario inicial | Producción | Ventas est. | Inventario proyectado |
-|-------|--------------------|-----------|-------------|----------------------|
-| MOST  | ~0                 | 200,000   |             | |
-| MOVE  | 52,000             | 10,000    |             | |
+### Producción e inventario R1
+| Marca | Inv. inicial | Planificado | Producido | Vendido | Inv. final | Coste unit. |
+|-------|-------------|-------------|-----------|---------|-----------|-------------|
+| MOST | 0 | 200k | 189.2k | 189.2k | 0 | $57.4 |
+| MOVE | 52.2k | 10k | 12k | 64.2k | 0 | $118.8 |
 
-## Alertas del período
-- ⚠️ MOST: bajada de precio agresiva $260 → $182 (−30%). Riesgo de margen muy bajo.
-- ⚠️ MOVE: 52k unidades de inventario. Con producción de solo 10k, inventario inicial = 62k. Liquidar requiere ventas masivas o reducción de precio mayor.
-- ⚠️ MOST: producción de 200k (+42% vs. 141k vendidos) supera el ±20% automático → costo de ajuste de capacidad.
+✅ Inventario MOVE liquidado por completo.
+
+### Distribución R1 (cobertura % tiendas)
+| Marca | Especializadas | Grandes superficies | eCommerce |
+|-------|---------------|---------------------|-----------|
+| MOST | 39.0% | 57.8% | 45.2% |
+| MOVE | 54.2% | 59.6% | 56.7% |
+
+Fuerza de ventas estimada: M 192 FTE vs L 68, R 62, S 69, T 62.
+
+### Segmentos (Consumer Panel R1, share en unidades)
+| Marca | Profs | BB | Gen-X | Millennials | Gen-Z |
+|-------|-------|----|-------|-------------|-------|
+| MOST | 0.8% | 4.0% | 0.2% | 10.3% | **46.6%** |
+| MOVE | 3.5% | 7.0% | 1.3% | 16.7% | 2.3% |
+
+### Awareness / Intención de compra R1
+| Marca | Awareness | Intención | Funnel: Consideración → Preferencia |
+|-------|-----------|-----------|--------------------------------------|
+| MOST | 58.8% | 13.2% | 36.6% → 25.4% |
+| MOVE | 69.4% | 5.1% | 42.2% → 23.3% |

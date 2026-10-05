@@ -1,7 +1,6 @@
 # Informe Anual — Período 01
 
-> **Estado:** Ronda 1 en curso — informe a completar cuando salgan los resultados.
-> Sección "Baseline P0" ya cargada con datos reales del simulador.
+> **Estado:** ✅ Completo. Fuente: `resultados/TeamExport_Periodo_1.xlsx`.
 
 ---
 
@@ -46,59 +45,46 @@
 
 ---
 
-## RESULTADOS RONDA 1 (a completar)
-
-### Datos generales
-- **Período:** 01
-- **Fecha de recepción del informe:** 
+## RESULTADOS RONDA 1 (Período 1)
 
 ### Mercado general
+| Categoría | Unidades | Crecimiento | Retail |
+|-----------|----------|-------------|--------|
+| Sonites | ~1,142k | +22% vs 939k | ~$387M |
+| Vodites | 0 | — | Nadie lanzó. Mercado abre en P3 (forecast) |
 
-| Categoría | Tamaño de mercado (unidades) | Crecimiento vs. anterior |
-|-----------|------------------------------|--------------------------|
-| Sonites | | vs. 939k (P0) |
-| Vodites | | — |
+### Panel de industria P1
+| Empresa | SPI | Ingresos | Contrib. neta | MS valor | MS unid. | Unidades |
+|---------|-----|----------|---------------|----------|----------|----------|
+| T | 1,191 | $81,235k | $32,190k | 30.5% | 24.6% | 281.5k |
+| L | 1,130 | $63,936k | $23,786k | 23.9% | 22.4% | 256.1k |
+| **M** | **944** | **$39,413k** | **$12,186k** | **14.7%** | **22.2%** | **253.4k** |
+| R | 929 | $56,574k | $15,917k | 21.4% | 16.8% | 192.0k |
+| S | 855 | $25,393k | $9,555k | 9.5% | 14.0% | 159.5k |
 
-### Resultados de la competencia
+### Marcas Sonites P1
+| Marca | PVP | Coste base | Unidades | Δ unid. | MS unid. | MS valor |
+|-------|-----|-----------|----------|---------|----------|----------|
+| TONE (T) | $448 | $188 | 211.8k | +75k | 18.5% | 23.6% |
+| MOST (M) | $182 | $76 | 189.2k | +48k | 16.6% | 8.5% |
+| LOOP (L) | $485 | $211 | 153.0k | +26k | 13.4% | 18.5% |
+| ROCK (R) | $440 | $208 | 152.3k | +32k | 13.3% | 16.7% |
+| LOCK (L) | $215 | $81 | 103.1k | +30k | 9.0% | 5.5% |
+| SOLO (S) | $290 | $85 | 81.2k | +16k | 7.1% | 5.8% |
+| SOFT (S) | $190 | $48 | 78.2k | −16k | 6.8% | 3.7% |
+| TOPS (T) | $395 | $205 | 69.7k | −16k | 6.1% | 6.9% |
+| MOVE (M) | $390 | $121 | 64.2k | +20k | 5.6% | 6.2% |
+| ROLL (R) | $470 | $221 | 39.6k | −13k | 3.5% | 4.6% |
 
-| Empresa | Marca | Categoría | Unidades | Market Share | Precio |
-|---------|-------|-----------|----------|-------------|--------|
-| | | | | | |
+### Estudios clave R1 (resumen)
+- **Consumer Panel:** MOST domina Gen-Z (46.6%); MOVE mejor en Millennials (16.7%).
+- **Semantic Scales:** MOVE percibido caro (precio 5.35) y de bajo diseño (1.63) vs ideal Millennials (diseño 5.28, precio 3.16).
+- **Importancia de atributos:** Precio 10 · Potencia 5.8 · Pantalla 3.1 · Diseño 2.7 · Batería 1.5 · Funcionalidades 1.2.
+- **Fuerza de ventas competitiva:** M 192 FTE vs ~62-69 del resto.
+- **Publicidad competitiva:** M $4.0M · L $4.6M · T $4.5M · R $4.05M · S $3.9M.
+- **Market Forecast (P1→P2):** Profs 200→237k, BB 197→193k, Gen-X 207→256k, Millennials 197→243k, Gen-Z 342→405k.
 
-### Resultados de estudios de mercado
-
-*(Pegar aquí los resultados de los 14 estudios solicitados en R1)*
-
-#### Estudio 1 — Consumer Survey:
-
-#### Estudio 2 — Consumer Panel:
-
-#### Estudio 3 — Distribution Panel:
-
-#### Estudio 4 — Semantic Scales:
-
-#### Estudio 5 — MDS:
-
-#### Estudio 6 — Market Forecast:
-
-#### Estudio 7 — Competitive Ad Spend:
-
-#### Estudio 8 — Advertising Experiment:
-
-#### Estudio 9 — Sales Force Experiment:
-
-#### Estudio 10 — Competitive Salesforce:
-
-#### Estudio 11 — Conjoint Analysis:
-
-#### Estudio 12 — Industry Benchmarking:
-
-### Novedades del mercado Ronda 1
-
-- Nuevas marcas lanzadas:
-- Marcas discontinuadas:
-- Cambios de precio significativos:
-- Movimientos en canales:
-
-### Notas para la Ronda 2
-
+### Novedades del mercado R1
+- Marcas lanzadas / discontinuadas: ninguna.
+- Bajadas de precio generalizadas: TONE $510→448, ROCK $495→440, LOOP $520→485, SOLO $340→290, SOFT $210→190, LOCK $225→215.
+- Ningún equipo invirtió en I+D en R1.

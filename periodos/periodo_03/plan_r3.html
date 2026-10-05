@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mostros · Ronda 3</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#ffffff;--surface-2:#f0f2f5;--text:#1a1d23;--muted:#5d6470;--border:#e1e4e9;
+  --accent:#2f5bea;--accent-soft:#e6ecfd;--good:#1f8a5b;--good-soft:#e3f4ec;--bad:#c2410c;--bad-soft:#fdeee5;--warn:#a16207;--warn-soft:#fdf5dc;
+  --c-l:#2f5bea;--c-t:#7c3aed;--c-s:#0e9f8a;--c-r:#d97706;--c-m:#dc2626;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111318;--surface:#1a1d24;--surface-2:#222631;--text:#e8eaee;--muted:#9aa1ad;--border:#2e3340;
+    --accent:#7d9bff;--accent-soft:#222c4a;--good:#4cc38a;--good-soft:#16302a;--bad:#f0855a;--bad-soft:#3a2219;--warn:#e3b341;--warn-soft:#352c14;
+    --c-l:#7d9bff;--c-t:#b18cff;--c-s:#3dd6c0;--c-r:#f5a524;--c-m:#ff6b6b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111318;--surface:#1a1d24;--surface-2:#222631;--text:#e8eaee;--muted:#9aa1ad;--border:#2e3340;
+  --accent:#7d9bff;--accent-soft:#222c4a;--good:#4cc38a;--good-soft:#16302a;--bad:#f0855a;--bad-soft:#3a2219;--warn:#e3b341;--warn-soft:#352c14;
+  --c-l:#7d9bff;--c-t:#b18cff;--c-s:#3dd6c0;--c-r:#f5a524;--c-m:#ff6b6b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 10px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:18px}
+.brand small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
+.tabs{display:flex;gap:4px}
+.tab{appearance:none;border:0;background:none;color:var(--muted);font:inherit;font-weight:600;padding:10px 14px;border-bottom:3px solid transparent;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+.subnav[hidden]{display:none}
+.subnav{display:flex;gap:6px;flex-wrap:wrap;padding:0 0 10px}
+.subnav a{font-size:13px;color:var(--muted);text-decoration:none;background:var(--surface-2);padding:4px 10px;border-radius:999px}
+.subnav a:hover{color:var(--accent)}
+main{padding:24px 0 64px}
+section.panel{display:none}
+section.panel.active{display:block}
+h1{font-size:26px;margin:0 0 6px}
+h2{font-size:19px;margin:36px 0 12px;scroll-margin-top:130px}
+h3{font-size:15px;margin:0 0 6px}
+p.lead{color:var(--muted);margin:0 0 20px;max-width:760px}
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.kpi .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.kpi .val{font-size:26px;font-weight:700;margin-top:2px}
+.kpi .delta{font-size:13px;font-weight:600}
+.down{color:var(--bad)}.up{color:var(--good)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;background:var(--surface-2)}
+.tbl td.n,.tbl th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tbl tr.me td{background:var(--bad-soft);font-weight:600}
+.scroll{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.cause{border-left:4px solid var(--bad)}
+.cause .num{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--bad-soft);color:var(--bad);font-weight:700;text-align:center;line-height:24px;font-size:13px;margin-right:6px}
+.cause ul,.card ul{margin:8px 0 0;padding-left:18px}
+.cause li,.card li{margin:3px 0}
+.pos{border-left:4px solid var(--good)}
+.note{background:var(--warn-soft);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:14px}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.pill.ok{background:var(--good-soft);color:var(--good)}
+.pill.chk{background:var(--warn-soft);color:var(--warn)}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.bar{height:10px;border-radius:5px;background:var(--accent)}
+.barrow{display:grid;grid-template-columns:170px 1fr 70px;gap:10px;align-items:center;font-size:14px;margin:6px 0}
+.barrow .track{background:var(--surface-2);border-radius:5px}
+.dec td:first-child{white-space:nowrap}
+input[type=checkbox]{accent-color:var(--accent);width:16px;height:16px}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
+@media (max-width:600px){h1{font-size:22px}.barrow{grid-template-columns:110px 1fr 60px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">Mostros · Digital Markstrat<small>Industria Albatross · Ronda 3 · Presupuesto $10.6M</small></div>
+      <nav class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="pasado">1 · Qué pasó y por qué</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="plan">2 · Plan Ronda 3</button>
+      </nav>
+    </div>
+    <div class="subnav" id="sub-pasado">
+      <a href="#resumen">Resumen</a><a href="#spi">SPI</a><a href="#industria">Industria</a><a href="#causas">Causas</a><a href="#segmentos">Segmentos</a><a href="#positivo">Lo positivo</a>
+    </div>
+    <div class="subnav" id="sub-plan" hidden>
+      <a href="#supuestos">Supuestos</a><a href="#competencia">Competencia</a><a href="#decisiones">Decisiones</a><a href="#presupuesto">Presupuesto</a><a href="#proyeccion">Proyección</a><a href="#riesgos">Riesgos</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+<!-- ================= SECCIÓN 1 ================= -->
+<section class="panel active" id="pasado">
+  <h1>Qué pasó y por qué</h1>
+  <p class="lead">Pasamos de 3° a 5° en el SPI entre P1 y P2. El mercado creció 21% en unidades y fuimos el único equipo que vendió menos.</p>
+
+  <h2 id="resumen">Resumen</h2>
+  <div class="grid g4">
+    <div class="card kpi"><div class="lbl">SPI</div><div class="val">781</div><div class="delta down">944 → 781 · 3° → 5°</div></div>
+    <div class="card kpi"><div class="lbl">Ingresos</div><div class="val">$33.7M</div><div class="delta down">−15% vs P1</div></div>
+    <div class="card kpi"><div class="lbl">Contribución neta</div><div class="val">$7.7M</div><div class="delta down">$12.2M → $7.7M · última</div></div>
+    <div class="card kpi"><div class="lbl">Share en unidades</div><div class="val">17.4%</div><div class="delta down">22.2% → 17.4%</div></div>
+  </div>
+
+  <h2 id="spi">Evolución del SPI</h2>
+  <div class="card">
+    <svg class="chart" viewBox="0 0 640 260" role="img" aria-label="SPI por empresa, periodos 0 a 2">
+      <g font-size="11" fill="var(--muted)">
+        <line x1="60" y1="20" x2="600" y2="20" stroke="var(--border)"/><text x="52" y="24" text-anchor="end">1400</text>
+        <line x1="60" y1="80" x2="600" y2="80" stroke="var(--border)"/><text x="52" y="84" text-anchor="end">1200</text>
+        <line x1="60" y1="140" x2="600" y2="140" stroke="var(--border)"/><text x="52" y="144" text-anchor="end">1000</text>
+        <line x1="60" y1="200" x2="600" y2="200" stroke="var(--border)"/><text x="52" y="204" text-anchor="end">800</text>
+        <text x="90" y="245" text-anchor="middle">P0</text><text x="330" y="245" text-anchor="middle">P1</text><text x="570" y="245" text-anchor="middle">P2</text>
+      </g>
+      <!-- y = 140 - (v-1000)*0.3 -->
+      <polyline fill="none" stroke="var(--c-l)" stroke-width="2.5" points="90,140 330,101 570,35"/>
+      <polyline fill="none" stroke="var(--c-t)" stroke-width="2.5" points="90,140 330,83 570,70"/>
+      <polyline fill="none" stroke="var(--c-s)" stroke-width="2.5" points="90,140 330,184 570,110"/>
+      <polyline fill="none" stroke="var(--c-r)" stroke-width="2.5" points="90,140 330,161 570,170"/>
+      <polyline fill="none" stroke="var(--c-m)" stroke-width="4" points="90,140 330,157 570,206"/>
+      <g font-size="12" font-weight="600">
+        <text x="580" y="39" fill="var(--c-l)">L 1351</text>
+        <text x="580" y="74" fill="var(--c-t)">T 1235</text>
+        <text x="580" y="114" fill="var(--c-s)">S 1100</text>
+        <text x="580" y="170" fill="var(--c-r)">R 899</text>
+        <text x="580" y="214" fill="var(--c-m)">M 781</text>
+      </g>
+      <circle cx="330" cy="157" r="4" fill="var(--c-m)"/><text x="330" y="176" font-size="11" text-anchor="middle" fill="var(--c-m)">944 (3°)</text>
+    </svg>
+    <div class="legend"><span><i style="background:var(--c-m)"></i>Mostros</span><span><i style="background:var(--c-l)"></i>L</span><span><i style="background:var(--c-t)"></i>T</span><span><i style="background:var(--c-s)"></i>S</span><span><i style="background:var(--c-r)"></i>R</span></div>
+  </div>
+  <p class="lead" style="margin-top:10px">En P1 éramos un 3° frágil: 15 puntos sobre R, sostenidos por volumen (2° en unidades) y no por rentabilidad (4° en contribución).</p>
+
+  <h2 id="industria">Panel de industria P2</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Empresa</th><th class="n">SPI</th><th class="n">Ingresos</th><th class="n">Δ ingresos</th><th class="n">Contrib. neta</th><th class="n">MS valor</th><th class="n">Unidades</th><th class="n">Δ unid.</th></tr></thead>
+    <tbody>
+      <tr><td>L</td><td class="n">1,351</td><td class="n">$80.1M</td><td class="n up">+25%</td><td class="n">$29.0M</td><td class="n">27.7%</td><td class="n">344k</td><td class="n up">+34%</td></tr>
+      <tr><td>T</td><td class="n">1,235</td><td class="n">$83.1M</td><td class="n up">+2%</td><td class="n">$33.1M</td><td class="n">28.6%</td><td class="n">336k</td><td class="n up">+19%</td></tr>
+      <tr><td>S</td><td class="n">1,100</td><td class="n">$36.4M</td><td class="n up">+43%</td><td class="n">$13.1M</td><td class="n">12.6%</td><td class="n">230k</td><td class="n up">+44%</td></tr>
+      <tr><td>R</td><td class="n">899</td><td class="n">$56.1M</td><td class="n down">−1%</td><td class="n">$12.2M</td><td class="n">19.5%</td><td class="n">232k</td><td class="n up">+21%</td></tr>
+      <tr class="me"><td>M · Mostros</td><td class="n">781</td><td class="n">$33.7M</td><td class="n down">−15%</td><td class="n">$7.7M</td><td class="n">11.6%</td><td class="n">241k</td><td class="n down">−5%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="causas">Por qué caímos: causas en orden de impacto</h2>
+  <div class="grid g2">
+    <div class="card cause"><h3><span class="num">1</span>MOST perdió Gen-Z (−32k u)</h3>
+      <ul>
+        <li>Share en Gen-Z: <b>46.6% → 34.0%</b>, con el segmento creciendo ~15%.</li>
+        <li>S atacó con SOFT a $170, SOLO (+63k u) y $1.67M de publicidad en Gen-Z. LOCK bajó a $200.</li>
+        <li>Producto viejo: potencia 1.5 vs ideal 2.23; diseño 2.48 vs 3.94.</li>
+        <li>Sobreproducción: 19k u de stock.</li>
+      </ul></div>
+    <div class="card cause"><h3><span class="num">2</span>MOVE: el recorte de precio no pagó</h3>
+      <ul>
+        <li>Precio −30% ($390 → $273): unidades +31%, ingresos −8%, contribución en baja.</li>
+        <li>Planificamos 70k, se produjeron 84k y se vendió todo: <b>29k u perdidas</b> según el instructor.</li>
+        <li>Mal posicionado para Millennials: diseño 1.63 vs ideal 5.27.</li>
+        <li>ROMI de la publicidad: <b>−99%</b> (~$2.1M sin retorno).</li>
+      </ul></div>
+    <div class="card cause"><h3><span class="num">3</span>Recorte brusco de fuerza de ventas</h3>
+      <ul>
+        <li>192 → 75 FTE. Ahorro de $2.4M, pero la cobertura cayó entre 5 y 15 pts.</li>
+        <li>MOST en grandes superficies (60% de las compras de Gen-Z): 57.8% → 51.7%.</li>
+        <li>En P1 el exceso nos había costado ~$2.6M sin traer share: rendimientos decrecientes.</li>
+      </ul></div>
+    <div class="card cause"><h3><span class="num">4</span>La competencia jugó más fuerte</h3>
+      <ul>
+        <li>Guerra de precios en gama alta: TONE −$78, ROCK −$75, LOOP −$58 (+75k a +124k u cada una).</li>
+        <li>R y T discontinuaron ROLL y TOPS para concentrar recursos.</li>
+        <li>S, que estaba último, es el que más subió.</li>
+      </ul></div>
+    <div class="card cause"><h3><span class="num">5</span>I+D de $2.79M sin retorno todavía</h3>
+      <ul>
+        <li>Todos invirtieron algo parecido (R $5.6M). No explica la caída por sí solo.</li>
+        <li>Sin I+D igual habríamos quedado últimos en contribución ($10.5M).</li>
+      </ul></div>
+  </div>
+
+  <h2 id="segmentos">Share por segmento (unidades)</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Marca</th><th>Período</th><th class="n">Profs</th><th class="n">Baby Boomers</th><th class="n">Gen-X</th><th class="n">Millennials</th><th class="n">Gen-Z</th></tr></thead>
+    <tbody>
+      <tr><td>MOST</td><td>P1</td><td class="n">0.8%</td><td class="n">4.0%</td><td class="n">0.2%</td><td class="n">10.3%</td><td class="n"><b>46.6%</b></td></tr>
+      <tr><td>MOST</td><td>P2</td><td class="n">0.1%</td><td class="n">3.2%</td><td class="n">0.1%</td><td class="n">6.5%</td><td class="n down"><b>34.0%</b></td></tr>
+      <tr><td>MOVE</td><td>P1</td><td class="n">3.5%</td><td class="n">7.0%</td><td class="n">1.3%</td><td class="n">16.7%</td><td class="n">2.3%</td></tr>
+      <tr><td>MOVE</td><td>P2</td><td class="n">0.3%</td><td class="n">6.6%</td><td class="n">0.4%</td><td class="n up"><b>20.1%</b></td><td class="n">5.2%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="positivo">Lo positivo: los proyectos encajan con lo que pide el mercado</h2>
+  <div class="grid g2">
+    <div class="card pos"><h3>POMOST2 → Gen-Z</h3>
+      <p style="margin:0">Diseño 6 · pantalla 16 · potencia 24 · coste $68 (más barato que MOST hoy). La percepción esperada queda casi sobre el ideal de Gen-Z: potencia 2.2 vs 2.23, batería 1.9 vs 1.79.</p></div>
+    <div class="card pos"><h3>POMOVE2 → Millennials</h3>
+      <p style="margin:0">Diseño 8 · pantalla 26 · potencia 64. Calza con el óptimo del conjoint (8 / 27 / 66 / $286). Millennials es el segmento que más crece: 245k → 692k en P7.</p></div>
+  </div>
+</section>
+
+<!-- ================= SECCIÓN 2 ================= -->
+<section class="panel" id="plan">
+  <h1>Plan sugerido · Ronda 3</h1>
+  <p class="lead">Reposicionar las dos marcas sobre sus segmentos, recuperar distribución, defender Gen-Z frente a SOLO y preparar una tercera marca para Gen-X en P4.</p>
+
+  <h2 id="supuestos">Supuestos</h2>
+  <div class="grid g4">
+    <div class="card"><span class="pill">Presupuesto</span><p style="margin:8px 0 0">$10.6M autorizado, sin préstamos.</p></div>
+    <div class="card"><span class="pill">Vodites</span><p style="margin:8px 0 0">Sin I+D: el profesor estima ~$10M. Lo retomamos más adelante.</p></div>
+    <div class="card"><span class="pill ok">Portafolio</span><p style="margin:8px 0 0">MOST → POMOST2 y MOVE → POMOVE2, ya cargados en el simulador.</p></div>
+    <div class="card"><span class="pill chk">Costos</span><p style="margin:8px 0 0">TC estimado: POMOST2 ~$57 · POMOVE2 ~$128 con 125k u.</p></div>
+  </div>
+
+  <h2 id="competencia">Escenario competitivo esperado</h2>
+  <div class="grid g2">
+    <div class="card"><h3>S · SOLO hacia Gen-Z (el más probable)</h3><ul>
+      <li>SOLO ya tiene diseño 8 y 19% en Gen-Z. Si suma potencia y baja precio, choca con POMOST2.</li>
+      <li>Nuestra defensa: costo ($57 vs $87), precio $175, awareness 84% y cobertura en grandes superficies.</li>
+      <li>Si se va a Gen-Z, libera parte de Millennials (22.6%), justo donde entra POMOVE2.</li></ul></div>
+    <div class="card"><h3>L, T y R</h3><ul>
+      <li>LOCK puede reforzar Gen-Z ($200).</li>
+      <li>T, L y R relanzan en Profs, Gen-X y BB con guerra de precios (TONE $370, ROCK $365).</li>
+      <li>Vodites: nadie invirtió en P2, así que nadie lanza antes de P5.</li></ul></div>
+  </div>
+
+  <h2 id="decisiones">Decisiones a tomar en el nuevo período</h2>
+  <p class="lead">Las casillas solo sirven para seguir el avance en esta pantalla; no se guardan.</p>
+  <div class="scroll"><table class="tbl dec">
+    <thead><tr><th>✓</th><th>Pantalla</th><th>Decisión</th><th>MOST</th><th>MOVE</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td><input type="checkbox"></td><td>Portafolio</td><td>Operación</td><td>Modificar → POMOST2</td><td>Modificar → POMOVE2</td><td>Specs casi sobre el ideal del segmento. Ya cargado: confirmar.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Precio (PVP)</td><td><b>$175</b></td><td><b>$279</b></td><td>Óptimos del conjoint ($177 / $286), por debajo de SOLO ($280) y LOCK ($200).</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Producción</td><td><b>200k</b> (160–240k)</td><td><b>125k</b> (100–150k)</td><td>No repetir el quiebre de stock de MOVE (demanda P2 ~113k).</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Publicidad: medios / investigación</td><td>$1,800k / $200k</td><td>$2,250k / $250k</td><td>Relanzamiento: comunicar la nueva percepción. ~10% en investigación.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Segmentos objetivo</td><td>Gen-Z 85% · Millennials 15%</td><td>Millennials 85% · Gen-X 15%</td><td>Foco en el segmento de cada producto.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing mix</td><td>Objetivo perceptual (semánticas)</td><td>Diseño 4.0 · Potencia 2.3 · Precio 2.1</td><td>Diseño 5.3 · Potencia 4.4 · Pantalla 4.4 · Precio 3.1</td><td>Ideales de Gen-Z y Millennials.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Marketing digital</td><td>Mix de medios: propio / pago / ganado / tradicional / exterior</td><td>15 / 20 / 30 / 20 / 15</td><td>20 / 25 / 25 / 18 / 12</td><td>MOST: Tradicional y Exterior con el mejor ROMI. MOVE: hábitos digitales de Millennials.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Fuerza de ventas</td><td>FTE: especializadas / grandes superficies</td><td>18 / 40</td><td>25 / 22</td><td>75 → 105 FTE. Frena la caída de cobertura. Más allá de ~105 rinde poco.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Fuerza de ventas</td><td>Digital: eCommerce / eStore</td><td>$90k / $20k</td><td>$110k / $40k</td><td>Mantener presencia online.</td></tr>
+      <tr><td><input type="checkbox"></td><td>I+D</td><td>Nuevo proyecto Sonite <b>POMOXI</b> (Gen-X)</td><td colspan="2">Func 10 · Diseño 9 · Batería 50 · Pantalla 20 · Potencia 70 · ~$2.3M <span class="pill chk">verificar costo</span></td><td>Tercera marca para P4: Gen-X crece a 437k y paga ~$400. Hoy tenemos 0.1% de share.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Estudios</td><td>Qué comprar</td><td colspan="2">Todos los de Sonites + Benchmark + Previsión Vodites (~$580k)</td><td>Seguir de cerca a SOLO y a los relanzamientos.</td></tr>
+      <tr><td><input type="checkbox"></td><td>Potencia de marketing</td><td>Iniciativas (máx. 3)</td><td colspan="2">Influenciador de contenidos $215k · Reorientación $55k · App móvil $55k</td><td>Refuerzo digital para Gen-Z y Millennials.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="presupuesto">Presupuesto ($10.6M)</h2>
+  <div class="card">
+    <div class="barrow"><span>Publicidad MOVE</span><div class="track"><div class="bar" style="width:23.6%"></div></div><span class="n">$2,500k</span></div>
+    <div class="barrow"><span>Fuerza de ventas</span><div class="track"><div class="bar" style="width:24.8%"></div></div><span class="n">$2,630k</span></div>
+    <div class="barrow"><span>I+D POMOXI</span><div class="track"><div class="bar" style="width:21.7%"></div></div><span class="n">~$2,300k</span></div>
+    <div class="barrow"><span>Publicidad MOST</span><div class="track"><div class="bar" style="width:18.9%"></div></div><span class="n">$2,000k</span></div>
+    <div class="barrow"><span>Estudios</span><div class="track"><div class="bar" style="width:5.5%"></div></div><span class="n">$580k</span></div>
+    <div class="barrow"><span>Potencia de marketing</span><div class="track"><div class="bar" style="width:3.1%"></div></div><span class="n">$325k</span></div>
+    <div class="barrow" style="font-weight:700;border-top:1px solid var(--border);padding-top:8px"><span>Total</span><span></span><span class="n">~$10,335k</span></div>
+    <p style="margin:6px 0 0;color:var(--muted);font-size:13px">Margen de ~$265k para ajustar el costo real de POMOXI. Si sale más caro, recortar primero la investigación publicitaria y después la publicidad de MOST.</p>
+  </div>
+
+  <h2 id="proyeccion">Proyección gruesa P3</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Marca</th><th class="n">Unidades</th><th class="n">Precio venta − TC</th><th class="n">Contrib. antes mkt</th></tr></thead>
+    <tbody>
+      <tr><td>MOST</td><td class="n">~200k</td><td class="n">$116 − $57 = $59</td><td class="n">~$11.8M</td></tr>
+      <tr><td>MOVE</td><td class="n">~125k</td><td class="n">$185 − $128 = $57</td><td class="n">~$7.1M</td></tr>
+      <tr><td><b>Total</b></td><td></td><td></td><td class="n"><b>~$18.9M</b> (P2: $16.4M)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid g4" style="margin-top:12px">
+    <div class="card kpi"><div class="lbl">Contribución neta P3</div><div class="val">≈ $8.4M</div><div class="delta up">vs $7.7M en P2</div></div>
+    <div class="card kpi"><div class="lbl">Sin I+D sería</div><div class="val">≈ $10.7M</div><div class="delta" style="color:var(--muted)">pero sin tercera marca en P4</div></div>
+  </div>
+
+  <h2 id="riesgos">Riesgos y contingencias</h2>
+  <div class="grid g2">
+    <div class="card"><h3>SOLO agresivo en Gen-Z</h3><p style="margin:0">Bajar MOST a ~$165 en P4 (con TC $57 aguanta) y reforzar la publicidad en Gen-Z.</p></div>
+    <div class="card"><h3>Quiebre de stock en MOVE</h3><p style="margin:0">El plan de 125k cubre automáticamente hasta 150k.</p></div>
+    <div class="card"><h3>Demanda de MOST menor</h3><p style="margin:0">El rango automático baja hasta 160k, con poco stock remanente.</p></div>
+    <div class="card"><h3>POMOXI más caro</h3><p style="margin:0">Ajustar specs (bajar pantalla o funcionalidades) antes de confirmar el proyecto.</p></div>
+  </div>
+  <div class="note" style="margin-top:16px">Nada de esto está cargado en el simulador. Detalle completo en <code>periodos/periodo_03/decisiones/plan_r3.md</code>.</div>
+</section>
+</main>
+<footer>Fuente: TeamExport P1 y P2 + simulador Ronda 3 · Mostros</footer>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tab');
+  function show(id){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===id?'true':'false');});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('active',p.id===id);});
+    document.getElementById('sub-pasado').hidden=id!=='pasado';
+    document.getElementById('sub-plan').hidden=id!=='plan';
+    try{localStorage.setItem('mostros-tab',id);}catch(e){}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab);window.scrollTo({top:0});});});
+  var saved=null;try{saved=localStorage.getItem('mostros-tab');}catch(e){}
+  if(saved==='plan')show('plan');
+})();
+</script>
+</body>
+</html>

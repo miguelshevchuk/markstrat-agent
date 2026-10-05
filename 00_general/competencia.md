@@ -83,5 +83,17 @@ MOVE está "en tierra de nadie" — no lidera en ningún segmento.
 | Período | Fuente | MOST Gen-Z | MOST Millennials | MOVE Millennials | Notas |
 |---------|--------|-----------|-----------------|-----------------|-------|
 | P0 | Baseline | 43% | 11% | 11% | Antes de cualquier decisión |
-| R1 | Consumer Panel | — | — | — | Completar con resultados |
-| R2 | Consumer Panel | — | — | — | |
+| R1 | Consumer Panel | 46.6% | 10.3% | 16.7% | MOST $182 dispara volumen Gen-Z |
+| R2 | Consumer Panel | 34.0% | 6.5% | 20.1% | S (SOFT/SOLO) nos quita Gen-Z; MOVE $273 sube en Millennials |
+
+## Evolución por período (resumen)
+
+| Empresa | SPI P1 | SPI P2 | Ingresos P2 | Contrib. neta P2 | MS valor P2 | Movimientos clave |
+|---------|--------|--------|-------------|------------------|-------------|-------------------|
+| L | 1,130 | 1,351 | $80.1M | $29.0M | 27.7% | LOOP $427, LOCK $200. Mayor crecimiento en valor |
+| T | 1,191 | 1,235 | $83.1M | $33.1M | 28.6% | TONE $370 (336k u). Discontinuó TOPS |
+| S | 855 | 1,100 | $36.4M | $13.1M | 12.6% | SOLO $280 (144k u), SOFT $170. Ataca Gen-Z/Millennials con $4.75M de publicidad |
+| R | 929 | 899 | $56.1M | $12.2M | 19.5% | ROCK $365. Discontinuó ROLL. Mayor I+D ($5.6M) |
+| M | 944 | 781 | $33.7M | $7.7M | 11.6% | Último |
+
+> Detalle completo: `periodos/periodo_0X/resultados/informe_anual.md`

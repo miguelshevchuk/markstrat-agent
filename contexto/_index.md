@@ -9,10 +9,14 @@
 | Campo | Valor |
 |-------|-------|
 | Empresa | **Mostros** — Letra M, Industria Albatross |
-| Marcas activas | **MOST** (TC $69) · **MOVE** (TC $120) |
-| Período actual | **Ronda 1** — decisiones enviadas, resultados pendientes |
-| Presupuesto R1 | Saldo disponible: **+$1,252k** (confirmado en simulador) |
-| Vendedores R1 | 170 físicos (MOST 65 / MOVE 105) + $450k digital |
+| Marcas activas | **MOST** ($177, coste $78) · **MOVE** ($273, coste $123) |
+| Período actual | **Ronda 3**: plan en `periodos/periodo_03/decisiones/plan_r3.md` + `periodos/periodo_03/plan_r3.html` (sin cargar) |
+| Supuestos R3 | Sin I+D Vodites, sin préstamos |
+| Presupuesto R3 | $10,600k autorizado |
+| SPI / ranking | P1: 944 (3°) → **P2: 781 (5° de 5)**. Líder L 1,351 |
+| Situación P2 | Ingresos $33.7M (−15%) · Contrib. neta $7.7M (última) · MS unid. 17.4% |
+| Listos para P3 | **POMOST2** (Gen-Z, coste $68) · **POMOVE2** (Millennials, coste $127) |
+| Vodites | I+D ~$10M según el profesor → descartado por ahora |
 
 ---
 
@@ -36,12 +40,22 @@
 | `periodos/periodo_01/decisiones/investigacion.md` | 14 estudios · $505,750 |
 | `periodos/periodo_01/decisiones/i_d.md` | Exploración Vodites · $31k |
 
-### periodo_01/resultados — A completar cuando salgan los resultados
-| Archivo | Estado |
-|---------|--------|
-| `periodos/periodo_01/resultados/kpis.md` | Baseline P0 cargado · R1 pendiente |
-| `periodos/periodo_01/resultados/informe_anual.md` | Pendiente |
-| `periodos/periodo_01/resultados/analisis.md` | Pendiente |
+### periodo_01/resultados — ✅ Completo
+| Archivo | Contenido |
+|---------|-----------|
+| `periodos/periodo_01/resultados/kpis.md` | Baseline P0 + KPIs R1 (SPI 944, 3°) |
+| `periodos/periodo_01/resultados/informe_anual.md` | Panel de industria, marcas y estudios R1 |
+| `periodos/periodo_01/analisis.md` | Post-ronda R1 |
+| `periodos/periodo_01/resultados/TeamExport_Periodo_1.xlsx` | Export crudo |
+
+### periodo_02 — ✅ Completo
+| Archivo | Contenido |
+|---------|-----------|
+| `periodos/periodo_02/decisiones/decisiones_r2.md` | Decisiones R2 reconstruidas (precios, producción, publicidad, SF, I+D) |
+| `periodos/periodo_02/resultados/kpis.md` | KPIs R2: SPI 781 (5°), finanzas, funnel, ROMI |
+| `periodos/periodo_02/resultados/informe_anual.md` | Industria, marcas, semánticas, MDS, conjoint, Vodites |
+| `periodos/periodo_02/analisis.md` | **Por qué caímos de 3° a 5°** + ideas R3 |
+| `periodos/periodo_02/resultados/TeamExport_Periodo_2.xlsx` | Export crudo |
 
 ### contexto — Solo bajo demanda explícita
 | Archivo | Peso | Cuándo cargar |
@@ -71,6 +85,8 @@
 | Decisión de precio | `portfolio.md` |
 | Producción / inventario | `produccion.md` |
 | Vendedores / canales | `fuerza_ventas.md` |
-| KPIs / SPI / resultados | `kpis.md` |
+| KPIs / SPI / resultados | `periodos/periodo_02/resultados/kpis.md` (último) |
+| Por qué caímos / diagnóstico | `periodos/periodo_02/analisis.md` |
+| Semánticas / MDS / conjoint | `periodos/periodo_02/resultados/informe_anual.md` |
 | I+D / Vodites | `i_d.md` |
 | Publicidad / medios | `publicidad.md` |
