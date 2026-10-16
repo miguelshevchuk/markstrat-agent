@@ -85,6 +85,7 @@ MOVE está "en tierra de nadie" — no lidera en ningún segmento.
 | P0 | Baseline | 43% | 11% | 11% | Antes de cualquier decisión |
 | R1 | Consumer Panel | 46.6% | 10.3% | 16.7% | MOST $182 dispara volumen Gen-Z |
 | R2 | Consumer Panel | 34.0% | 6.5% | 20.1% | S (SOFT/SOLO) nos quita Gen-Z; MOVE $273 sube en Millennials |
+| R3 | Consumer Panel | 27.6% | 0.4% | 15.7% | Todos clonan specs. TOPO $150 empata Gen-Z. RORRIN/TONICA/LOVE en Millennials |
 
 ## Evolución por período (resumen)
 
@@ -97,3 +98,12 @@ MOVE está "en tierra de nadie" — no lidera en ningún segmento.
 | M | 944 | 781 | $33.7M | $7.7M | 11.6% | Último |
 
 > Detalle completo: `periodos/periodo_0X/resultados/informe_anual.md`
+
+### Período 3: todos convergieron en las mismas specs
+| Empresa | SPI P3 | Ingresos | Contrib. neta | Marcas P3 | Movimientos clave |
+|---------|--------|----------|---------------|-----------|-------------------|
+| R | 1,691 | $122.4M | $52.3M | ROCK, RORRIN (new), RORROZ (new) | ROCK 15/8/70/32/80 → 85% de Profs. Clones en Gen-Z/Millennials. I+D Vodites $100k |
+| L | 1,320 | $81.9M | $34.2M | LOOP, LOCK, LOVE (new) | LOOP relanzado para Gen-X (50%). Publicidad $6.65M |
+| T | 1,123 | $82.8M | $29.6M | TONE, TONICA (new), TOPO (new) | TOPO $150 en Gen-Z (27.8%). Publicidad $7.29M (la mayor) |
+| M | 673 | $34.4M | $3.9M | MOST, MOVE | 4°. Publicidad $3.97M (la menor) |
+| S | 586 | $18.6M | −$3.2M | SOFT, SOLO | Colapso. I+D Vodites $100k |

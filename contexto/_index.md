@@ -8,15 +8,13 @@
 
 | Campo | Valor |
 |-------|-------|
-| Empresa | **Mostros** — Letra M, Industria Albatross |
-| Marcas activas | **MOST** ($177, coste $78) · **MOVE** ($273, coste $123) |
-| Período actual | **Ronda 3**: plan en `periodos/periodo_03/decisiones/plan_r3.md` + `periodos/periodo_03/plan_r3.html` (sin cargar) |
-| Supuestos R3 | Sin I+D Vodites, sin préstamos |
-| Presupuesto R3 | $10,600k autorizado |
-| SPI / ranking | P1: 944 (3°) → **P2: 781 (5° de 5)**. Líder L 1,351 |
-| Situación P2 | Ingresos $33.7M (−15%) · Contrib. neta $7.7M (última) · MS unid. 17.4% |
-| Listos para P3 | **POMOST2** (Gen-Z, coste $68) · **POMOVE2** (Millennials, coste $127) |
-| Vodites | I+D ~$10M según el profesor → descartado por ahora |
+| Empresa | **Mostros**: Letra M, Industria Albatross |
+| Marcas activas | **MOST** ($175, coste $61) · **MOVE** ($270, coste $126) |
+| Período actual | **Ronda 4**: borrador en `periodos/periodo_04/decisiones/plan_r4.md` (sin cargar) |
+| SPI / ranking | P1 944 (3°) → P2 781 (5°) → **P3 673 (4° de 5)**. Líder R 1,691 |
+| Situación P3 | Ingresos $34.4M · Contrib. neta $3.9M · MS unid. 14.1%. Todos clonaron specs |
+| Proyectos listos | **POMOXX** (Gen-X, $130) · POMOVE3 · POMOST3 |
+| Vodites | I+D ~$10M según el profesor → descartado por ahora. R y S arrancaron ($100k) |
 
 ---
 
@@ -47,6 +45,16 @@
 | `periodos/periodo_01/resultados/informe_anual.md` | Panel de industria, marcas y estudios R1 |
 | `periodos/periodo_01/analisis.md` | Post-ronda R1 |
 | `periodos/periodo_01/resultados/TeamExport_Periodo_1.xlsx` | Export crudo |
+
+### periodo_03 — ✅ Completo
+| Archivo | Contenido |
+|---------|-----------|
+| `periodos/periodo_03/decisiones/plan_r3.md` + `plan_r3.html` | Plan propuesto R3 |
+| `periodos/periodo_03/decisiones/decisiones_r3_reales.md` | Lo que realmente se envió vs el plan |
+| `periodos/periodo_03/resultados/kpis.md` | KPIs P3: SPI 673 (4°), funnel, experimentos |
+| `periodos/periodo_03/resultados/informe_anual.md` | Clones, marcas, semánticas, MDS, conjoint |
+| `periodos/periodo_03/analisis.md` | Qué pasó en P3 y lecciones |
+| `periodos/periodo_04/decisiones/plan_r4.md` | **Borrador del plan R4** |
 
 ### periodo_02 — ✅ Completo
 | Archivo | Contenido |
@@ -85,8 +93,8 @@
 | Decisión de precio | `portfolio.md` |
 | Producción / inventario | `produccion.md` |
 | Vendedores / canales | `fuerza_ventas.md` |
-| KPIs / SPI / resultados | `periodos/periodo_02/resultados/kpis.md` (último) |
-| Por qué caímos / diagnóstico | `periodos/periodo_02/analisis.md` |
-| Semánticas / MDS / conjoint | `periodos/periodo_02/resultados/informe_anual.md` |
+| KPIs / SPI / resultados | `periodos/periodo_03/resultados/kpis.md` (último) |
+| Por qué caímos / diagnóstico | `periodos/periodo_03/analisis.md` (P2: `periodo_02/analisis.md`) |
+| Semánticas / MDS / conjoint | `periodos/periodo_03/resultados/informe_anual.md` |
 | I+D / Vodites | `i_d.md` |
 | Publicidad / medios | `publicidad.md` |

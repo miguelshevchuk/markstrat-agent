@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mostros · Ronda 4</title>
+<style>
+:root{
+  --bg:#f6f7f9;--surface:#ffffff;--surface-2:#f0f2f5;--text:#1a1d23;--muted:#5d6470;--border:#e1e4e9;
+  --accent:#2f5bea;--accent-soft:#e6ecfd;--good:#1f8a5b;--good-soft:#e3f4ec;--bad:#c2410c;--bad-soft:#fdeee5;--warn:#a16207;--warn-soft:#fdf5dc;
+  --c-l:#2f5bea;--c-t:#7c3aed;--c-s:#0e9f8a;--c-r:#d97706;--c-m:#dc2626;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111318;--surface:#1a1d24;--surface-2:#222631;--text:#e8eaee;--muted:#9aa1ad;--border:#2e3340;
+    --accent:#7d9bff;--accent-soft:#222c4a;--good:#4cc38a;--good-soft:#16302a;--bad:#f0855a;--bad-soft:#3a2219;--warn:#e3b341;--warn-soft:#352c14;
+    --c-l:#7d9bff;--c-t:#b18cff;--c-s:#3dd6c0;--c-r:#f5a524;--c-m:#ff6b6b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111318;--surface:#1a1d24;--surface-2:#222631;--text:#e8eaee;--muted:#9aa1ad;--border:#2e3340;
+  --accent:#7d9bff;--accent-soft:#222c4a;--good:#4cc38a;--good-soft:#16302a;--bad:#f0855a;--bad-soft:#3a2219;--warn:#e3b341;--warn-soft:#352c14;
+  --c-l:#7d9bff;--c-t:#b18cff;--c-s:#3dd6c0;--c-r:#f5a524;--c-m:#ff6b6b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 10px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:18px}
+.brand small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
+.tabs{display:flex;gap:4px}
+.tab{appearance:none;border:0;background:none;color:var(--muted);font:inherit;font-weight:600;padding:10px 14px;border-bottom:3px solid transparent;cursor:pointer}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+.subnav[hidden]{display:none}
+.subnav{display:flex;gap:6px;flex-wrap:wrap;padding:0 0 10px}
+.subnav a{font-size:13px;color:var(--muted);text-decoration:none;background:var(--surface-2);padding:4px 10px;border-radius:999px}
+.subnav a:hover{color:var(--accent)}
+main{padding:24px 0 64px}
+section.panel{display:none}
+section.panel.active{display:block}
+h1{font-size:26px;margin:0 0 6px}
+h2{font-size:19px;margin:36px 0 12px;scroll-margin-top:130px}
+h3{font-size:15px;margin:0 0 6px}
+p.lead{color:var(--muted);margin:0 0 20px;max-width:760px}
+.grid{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.kpi .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.kpi .val{font-size:26px;font-weight:700;margin-top:2px}
+.kpi .delta{font-size:13px;font-weight:600}
+.down{color:var(--bad)}.up{color:var(--good)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;background:var(--surface-2)}
+.tbl td.n,.tbl th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tbl tr.me td{background:var(--bad-soft);font-weight:600}
+.scroll{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.cause{border-left:4px solid var(--bad)}
+.cause .num{display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--bad-soft);color:var(--bad);font-weight:700;text-align:center;line-height:24px;font-size:13px;margin-right:6px}
+.cause ul,.card ul{margin:8px 0 0;padding-left:18px}
+.cause li,.card li{margin:3px 0}
+.pos{border-left:4px solid var(--good)}
+.note{background:var(--warn-soft);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:14px}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.pill.ok{background:var(--good-soft);color:var(--good)}
+.pill.chk{background:var(--warn-soft);color:var(--warn)}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.bar{height:10px;border-radius:5px;background:var(--accent)}
+.barrow{display:grid;grid-template-columns:170px 1fr 70px;gap:10px;align-items:center;font-size:14px;margin:6px 0}
+.barrow .track{background:var(--surface-2);border-radius:5px}
+.dec td:first-child{white-space:nowrap}
+input[type=checkbox]{accent-color:var(--accent);width:16px;height:16px}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:20px 0}
+@media (max-width:600px){h1{font-size:22px}.barrow{grid-template-columns:110px 1fr 60px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">Mostros · Digital Markstrat<small>Industria Albatross · Ronda 4 · Presupuesto $10.8M</small></div>
+      <nav class="tabs" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="dec">1 · Decisiones propuestas</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="esc">2 · Escenarios A / B</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="fut">3 · Futuro y Vodites</button>
+      </nav>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="panel active" id="dec">
+  <h1>Decisiones propuestas · Ronda 4</h1>
+  <p class="lead">Partimos de lo que ya estaba cargado en el simulador y marcamos qué se corrige. <b>Ya está aplicado en el simulador (escenario A).</b> Contexto P3: todos los equipos tienen el mismo producto, las marcas nuevas arrancan con mejor percepción y la publicidad rinde 3–4x.</p>
+
+  <div class="grid g4">
+    <div class="card kpi"><div class="lbl">SPI P3</div><div class="val">673</div><div class="delta down">4° de 5 · líder R 1,691</div></div>
+    <div class="card kpi"><div class="lbl">Contribución neta P3</div><div class="val">$3.9M</div><div class="delta down">P2: $7.7M</div></div>
+    <div class="card kpi"><div class="lbl">Presupuesto P4</div><div class="val">$10.8M</div><div class="delta down">cargado $10.97M → −$204k</div></div>
+    <div class="card kpi"><div class="lbl">Intención vs share</div><div class="val">↓</div><div class="delta down">MOST 5.3% vs 8.4% · MOVE 3.6% vs 5.7%</div></div>
+  </div>
+
+  <h2>Correcciones sobre lo cargado</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Gravedad</th><th>Decisión</th><th>Cargado</th><th>Propuesto</th><th>Por qué</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pill" style="background:var(--bad-soft);color:var(--bad)">Crítico</span></td><td>PVP MOXX</td><td>$840</td><td><b>$359</b></td><td>Conjoint Gen-X: máximo a $372, 0.16 a $526. TONE $370 · LOOP $425.</td></tr>
+      <tr><td><span class="pill" style="background:var(--bad-soft);color:var(--bad)">Crítico</span></td><td>Producción MOXX</td><td>200k</td><td><b>50k</b></td><td>200k = 51% de Gen-X para una marca nueva. Habría más de 100k u de stock.</td></tr>
+      <tr><td><span class="pill" style="background:var(--bad-soft);color:var(--bad)">Crítico</span></td><td>Presupuesto</td><td>$10.97M</td><td><b>≤ $10.77M</b></td><td>Excedido en $204k.</td></tr>
+      <tr><td><span class="pill chk">Importante</span></td><td>Portafolio MOST</td><td>Modificar → POMOST3</td><td><b>Mantener (POMOST2)</b></td><td>POMOST3 ≈ POMOST2 (batería 35 → 36). El ideal de Gen-Z se mueve muy lento (batería +0.03 y potencia +0.02 por período): no cambia nada y liquida 15.4k u de stock (pérdida de ~$190k).</td></tr>
+      <tr><td><span class="pill ok">OK</span></td><td>Portafolio MOVE</td><td>Modificar → POMOVE3</td><td><b>Modificar → POMOVE3</b></td><td>Apunta al ideal <b>proyectado</b> de Millennials: en el mapa de percepción, rendimiento 4.2 → 6.1 (P4) → 8.0 (P5), con R² 100%. Potencia 70 acompaña esa subida y diseño 7 evita pasarse en conveniencia (ideal 3.1; las copias con diseño 8 quedan en ~5). Costo: se liquidan 6k u (~$150k) y +$3/u.</td></tr>
+      <tr><td><span class="pill chk">Importante</span></td><td>Publicidad MOST</td><td>$1,600k + $200k</td><td><b>$2,000k + $300k</b></td><td>Experimento P3: +$1.17M de contribución. TOPO tiene $2.76M.</td></tr>
+      <tr><td><span class="pill chk">Importante</span></td><td>Publicidad MOVE</td><td>$1,700k + $200k</td><td><b>$2,150k + $350k</b></td><td>Experimento P3: +$0.59M. El instructor pide más publicidad y 10–15% de investigación.</td></tr>
+      <tr><td><span class="pill chk">Importante</span></td><td>Objetivos MOST</td><td>Semánticas: Potencia 2.3 · Precio 2.0</td><td><b>Mapa de percepción: Rendimiento −10 · Conveniencia −4</b></td><td>Ideal proyectado P4 de Gen-Z (−10.0 / −3.9). MOST está en −12.5 / −7.5 por la imagen vieja.</td></tr>
+      <tr><td><span class="pill chk">Importante</span></td><td>Objetivos MOVE</td><td>Semánticas: Precio 2.9 · Potencia 5.0</td><td><b>Mapa de percepción: Rendimiento 6 · Conveniencia 3</b></td><td>Ideal proyectado P4 de Millennials (6.1 / 3.1). MOVE está en 0.3 / 0.7. El simulador acepta solo enteros en el mapa de percepción.</td></tr>
+      <tr><td><span class="pill chk">Importante</span></td><td>I+D POMPRO (Profs)</td><td>$1,490k</td><td><b>Depende del escenario</b></td><td>Ver pestaña 2.</td></tr>
+      <tr><td><span class="pill">Menor</span></td><td>Producción MOST</td><td>180k</td><td><b>140k</b></td><td>Vendió 144.6k en P3 y quedan 15.4k de stock.</td></tr>
+      <tr><td><span class="pill">Menor</span></td><td>Producción MOVE</td><td>120k</td><td><b>100k</b></td><td>Vendió 98k y quedan 6k de stock.</td></tr>
+      <tr><td><span class="pill">Menor</span></td><td>PVP MOVE</td><td>$275</td><td><b>$289</b></td><td>Conjoint Millennials: máximo a $300. RORRIN lidera a $300.</td></tr>
+      <tr><td><span class="pill ok">OK</span></td><td>Resto</td><td colspan="2">PVP MOST $170 · segmentos 100% · mix de medios · 106 FTE · estudios · publicidad MOXX $2.25M · objetivos MOXX</td><td>Sin cambios.</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <h2>Tendencia de los ideales (mapa de percepción, regresión del simulador)</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Segmento</th><th>Eje</th><th class="n">P0</th><th class="n">P3</th><th class="n">Pendiente</th><th class="n">P4 (proy.)</th><th class="n">P5 (proy.)</th><th class="n">Nuestra marca hoy</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="3">Millennials</td><td>Economía</td><td class="n">5.2</td><td class="n">6.7</td><td class="n">+0.52</td><td class="n">7.1</td><td class="n">7.6</td><td class="n">MOVE 6.0</td></tr>
+      <tr><td><b>Rendimiento</b></td><td class="n">−1.4</td><td class="n">4.2</td><td class="n up"><b>+1.87</b></td><td class="n"><b>6.1</b></td><td class="n"><b>8.0</b></td><td class="n down">MOVE 0.3</td></tr>
+      <tr><td>Conveniencia</td><td class="n">3.2</td><td class="n">3.1</td><td class="n">−0.02</td><td class="n">3.1</td><td class="n">3.1</td><td class="n down">MOVE 0.7</td></tr>
+      <tr><td rowspan="3">Gen-Z</td><td>Economía</td><td class="n">12.3</td><td class="n">13.2</td><td class="n">+0.37</td><td class="n">13.5</td><td class="n">13.8</td><td class="n">MOST 13.3</td></tr>
+      <tr><td>Rendimiento</td><td class="n">−11.6</td><td class="n">−10.4</td><td class="n">+0.40</td><td class="n">−10.0</td><td class="n">−9.6</td><td class="n down">MOST −12.5</td></tr>
+      <tr><td>Conveniencia</td><td class="n">−4.4</td><td class="n">−4.1</td><td class="n">+0.12</td><td class="n">−3.9</td><td class="n">−3.8</td><td class="n down">MOST −7.5</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:8px">Millennials se mueve rápido hacia más rendimiento: POMOVE3 (potencia 70) acompaña ese movimiento. Gen-Z casi no se mueve: POMOST3 no aporta y la brecha de MOST es de percepción, así que se ataca con publicidad y objetivos en el mapa de percepción.</p>
+
+  <h2>Decisiones finales por marca (escenario A)</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Decisión</th><th>MOST</th><th>MOVE</th><th>MOXX</th></tr></thead>
+    <tbody>
+      <tr><td>Portafolio</td><td>Mantener (POMOST2)</td><td>Modificar (POMOVE3)</td><td>Lanzar (POMOXX)</td></tr>
+      <tr><td>Producción</td><td>140k</td><td>100k</td><td>50k</td></tr>
+      <tr><td>PVP</td><td>$170</td><td>$289</td><td>$359</td></tr>
+      <tr><td>Medios / investigación</td><td>$2,000k / $300k</td><td>$2,150k / $350k</td><td>$2,000k / $250k</td></tr>
+      <tr><td>Segmento</td><td>Gen-Z 100%</td><td>Millennials 100%</td><td>Gen-X 100%</td></tr>
+      <tr><td>Objetivos perceptuales</td><td>Mapa: Rendimiento −10 · Conveniencia −4</td><td>Mapa: Rendimiento 6 · Conveniencia 3</td><td>Semánticas: Precio 5.5 · Potencia 4.7</td></tr>
+      <tr><td>Mix de medios</td><td>26/26/30/9/9</td><td>26/26/25/14/9</td><td>16/16/16/29/23</td></tr>
+      <tr><td>FTE esp / GS</td><td>15 / 32</td><td>18 / 18</td><td>14 / 9</td></tr>
+      <tr><td>eCom / eStore</td><td>$105k / $30k</td><td>$120k / $30k</td><td>$100k / $40k</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:8px">Mix de medios: propio / pago / ganado / tradicional / exterior (%). Estudios: los mismos que ya estaban cargados.</p>
+</section>
+
+<section class="panel" id="esc">
+  <h1>Escenario A vs Escenario B</h1>
+  <p class="lead">A: sin I+D para Profs; la plata va a publicidad de las marcas que ya tenemos. B: con POMPRO ($1.49M) para lanzar una cuarta marca en Profs en P5; hay que recortar publicidad para entrar en el presupuesto.</p>
+
+  <div class="grid g2">
+    <div class="card pos"><h3>A · Sin I+D Profs <span class="pill ok">Recomendado</span></h3><ul>
+      <li>Publicidad: MOST $2.3M · MOVE $2.5M · MOXX $2.25M.</li>
+      <li>Total ≈ $10.58M (≈ $190k libres).</li>
+      <li>Contribución neta P4 ≈ <b>$7.5M</b>.</li>
+      <li>Deja libre el presupuesto de P5 para empezar Vodites o un POMOST4 con diseño 7.</li></ul></div>
+    <div class="card"><h3>B · Con POMPRO (Profs)</h3><ul>
+      <li>Publicidad: MOST $1.9M · MOVE $2.0M · MOXX $1.9M. Estudios ~$450k. FTE MOXX 12 / 7.</li>
+      <li>Total ≈ $10.49M.</li>
+      <li>Contribución neta P4 ≈ <b>$6.6M</b> (−$1.5M de I+D, menos publicidad).</li>
+      <li>MPRO se lanza en P5 contra ROCK (85% de Profs).</li></ul></div>
+  </div>
+
+  <h2>Presupuesto P4 ($k)</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Rubro</th><th class="n">Cargado hoy</th><th class="n">A · Sin Profs</th><th class="n">B · Con Profs</th></tr></thead>
+    <tbody>
+      <tr><td>Publicidad MOST</td><td class="n">1,800</td><td class="n">2,300</td><td class="n">1,900</td></tr>
+      <tr><td>Publicidad MOVE</td><td class="n">1,900</td><td class="n">2,500</td><td class="n">2,000</td></tr>
+      <tr><td>Publicidad MOXX</td><td class="n">2,250</td><td class="n">2,250</td><td class="n">1,900</td></tr>
+      <tr><td>Fuerza de ventas</td><td class="n">2,938</td><td class="n">2,938</td><td class="n">~2,750</td></tr>
+      <tr><td>Estudios</td><td class="n">592</td><td class="n">592</td><td class="n">~450</td></tr>
+      <tr><td>I+D POMPRO</td><td class="n">1,490</td><td class="n">0</td><td class="n">1,490</td></tr>
+      <tr style="font-weight:700"><td>Total</td><td class="n down">10,970</td><td class="n">10,580</td><td class="n">~10,490</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Proyección P4</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Marca</th><th class="n">Margen/u</th><th class="n">A: unidades</th><th class="n">A: contrib.</th><th class="n">B: unidades</th><th class="n">B: contrib.</th></tr></thead>
+    <tbody>
+      <tr><td>MOST ($170)</td><td class="n">~$53</td><td class="n">~145k</td><td class="n">$7.7M</td><td class="n">~140k</td><td class="n">$7.4M</td></tr>
+      <tr><td>MOVE ($289, POMOVE3)</td><td class="n">~$59</td><td class="n">~98k</td><td class="n">$5.8M</td><td class="n">~93k</td><td class="n">$5.5M</td></tr>
+      <tr><td>MOXX ($359)</td><td class="n">~$104</td><td class="n">~48k</td><td class="n">$5.0M</td><td class="n">~44k</td><td class="n">$4.6M</td></tr>
+      <tr style="font-weight:700"><td>Antes de mkt</td><td></td><td></td><td class="n">$18.5M</td><td></td><td class="n">$17.5M</td></tr>
+      <tr><td>− Marketing, estudios, I+D, inventario</td><td></td><td></td><td class="n">−$11.0M</td><td></td><td class="n">−$10.9M</td></tr>
+      <tr style="font-weight:700"><td>Contribución neta P4</td><td></td><td></td><td class="n up">≈ $7.5M</td><td></td><td class="n">≈ $6.6M</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Qué pasa con MPRO en Profs (escenario B)</h2>
+  <div class="grid g2">
+    <div class="card cause"><h3>En contra</h3><ul>
+      <li>ROCK tiene 85% de Profs y está casi sobre el ideal en el mapa de percepción (−7.1 / 10.5 / 8.8 vs −8.7 / 10.4 / 8.3).</li>
+      <li>Profs crece a 398k en P4 y después <b>baja</b> a 373k en P8.</li>
+      <li>POMPRO queda corto vs el ideal en funcionalidades (12 vs ~15) y batería (63 vs ~70). ROCK tiene 15 / 70.</li>
+      <li>Coste mínimo $170 vs $161 de ROCK. A ~$349: margen ~$57/u vs ~$82 de ROCK.</li></ul></div>
+    <div class="card pos"><h3>A favor</h3><ul>
+      <li>Las marcas nuevas de P3 captaron 20–28% en su primer período.</li>
+      <li>Potencia 84 es el óptimo del conjoint de Profs.</li>
+      <li>Diversifica: sería la cuarta marca y nos haría menos dependientes de Gen-Z.</li></ul></div>
+  </div>
+  <div class="scroll" style="margin-top:12px"><table class="tbl">
+    <thead><tr><th>MPRO</th><th class="n">Share Profs</th><th class="n">Unidades</th><th class="n">Contrib. antes mkt</th><th class="n">Lanzamiento</th><th class="n">Neto</th></tr></thead>
+    <tbody>
+      <tr><td>P5 (lanzamiento)</td><td class="n">10–15%</td><td class="n">39–59k</td><td class="n">$2.2–3.4M</td><td class="n">~$2.5M</td><td class="n">≈ −$0.3M a +$0.9M</td></tr>
+      <tr><td>P6+</td><td class="n">15%</td><td class="n">~58k</td><td class="n">~$3.8M</td><td class="n">~$2.0M</td><td class="n">≈ +$1.8M</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:8px">El I+D de $1.49M se recuperaría recién hacia P6–P7, y en P5 compite por presupuesto con Vodites.</p>
+</section>
+
+<section class="panel" id="fut">
+  <h1>Futuros posibles y Vodites</h1>
+  <p class="lead">R y S ya invirtieron $100k cada uno en I+D de Vodites en P3. Con un costo de ~$10M (según el profesor) y presupuestos de ~$10.8M por período, lo más rápido es repartirlo en dos rondas: <b>primeros Vodites hacia P6</b>.</p>
+
+  <h2>Cronología probable de la competencia</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Período</th><th>Competencia (probable)</th><th>Mercado Vodite</th></tr></thead>
+    <tbody>
+      <tr><td>P4</td><td>R y S siguen invirtiendo en I+D de Vodites (habrá que verlo en el benchmark P4)</td><td>Sin marcas</td></tr>
+      <tr><td>P5</td><td>Terminan el proyecto quienes pongan ~$5M en P4 y ~$5M en P5</td><td>Sin marcas</td></tr>
+      <tr><td>P6</td><td><b>Primeros lanzamientos de Vodites</b> (R, rico en contribución; S, que no tiene nada que perder)</td><td>Innovadores (~80–140k u)</td></tr>
+      <tr><td>P7–P8</td><td>Llegan los Pioneros y crecen los Seguidores</td><td>Seguidores ~616k u hacia P7</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Escenario A: sin Profs</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Período</th><th>Nuestra jugada</th><th>Resultado esperado</th></tr></thead>
+    <tbody>
+      <tr><td>P4</td><td>3 marcas con publicidad fuerte. Corregir la percepción de MOST y MOVE</td><td>Contrib. ≈ $7.5M. Revertir intención < share</td></tr>
+      <tr><td>P5</td><td><b>Opción 1:</b> empezar Vodite (~$5M de I+D) si el benchmark P4 muestra a R/S avanzando. <b>Opción 2:</b> POMOST4 (diseño 7) ~$0.5M para despegarse de los 4 clones de Gen-Z</td><td>Contrib. baja en P5 si se va a Vodites (−$5M)</td></tr>
+      <tr><td>P6</td><td>Terminar el Vodite (~$5M) · lanzar POMOST4</td><td>Vodite disponible para P7</td></tr>
+      <tr><td>P7–P8</td><td><b>Lanzar Vodite</b> apuntando a Pioneros / Seguidores (conectividad 10, precio 6.7)</td><td>Entramos 1 período detrás de los primeros, pero a tiempo para los Seguidores</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Escenario B: con Profs</h2>
+  <div class="scroll"><table class="tbl">
+    <thead><tr><th>Período</th><th>Nuestra jugada</th><th>Resultado esperado</th></tr></thead>
+    <tbody>
+      <tr><td>P4</td><td>POMPRO $1.49M + 3 marcas con menos publicidad</td><td>Contrib. ≈ $6.6M</td></tr>
+      <tr><td>P5</td><td>Lanzar MPRO (~$2.5M) + sostener 3 marcas. Casi nada libre para Vodites</td><td>4 marcas. MPRO ≈ neutro</td></tr>
+      <tr><td>P6</td><td>Recién ahí arranca el Vodite (~$5M)</td><td>Competidores ya con Vodites en el mercado</td></tr>
+      <tr><td>P7–P8</td><td>Terminar el Vodite → lanzamiento en P8 (último período)</td><td><b>Llegamos tarde a Vodites</b>. MPRO suma ~+$1.8M/período</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Conclusión</h2>
+  <div class="grid g2">
+    <div class="card pos"><h3>Por qué A</h3><ul>
+      <li>La publicidad tiene retorno medido (experimento +$1.76M entre MOST y MOVE). POMPRO no tiene retorno comprobado.</li>
+      <li>Profs es el segmento más defendido (ROCK 85%) y deja de crecer.</li>
+      <li>Mantiene libre el presupuesto de P5 y P6 para no perder la ventana de Vodites.</li></ul></div>
+    <div class="card"><h3>Cuándo reconsiderar B</h3><ul>
+      <li>Si en P4 ROCK pierde share o sube precio.</li>
+      <li>Si el benchmark P4 muestra que nadie avanza en Vodites (no hay carrera).</li>
+      <li>En ese caso, POMPRO puede arrancar en P5 sin costo de oportunidad.</li></ul></div>
+  </div>
+  <div class="note" style="margin-top:16px">Proyecciones gruesas con márgenes de P3, previsiones de segmento y el comportamiento observado de las marcas nuevas. Validar con los resultados de P4.</div>
+</section>
+</main>
+<footer>Fuente: TeamExport P3 + simulador Ronda 4 (revisión de decisiones) · Mostros</footer>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tab');
+  function show(id){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===id?'true':'false');});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('active',p.id===id);});
+    try{localStorage.setItem('mostros-r4-tab',id);}catch(e){}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab);window.scrollTo({top:0});});});
+  var saved=null;try{saved=localStorage.getItem('mostros-r4-tab');}catch(e){}
+  if(saved==='esc'||saved==='fut')show(saved);
+})();
+</script>
+</body>
+</html>
