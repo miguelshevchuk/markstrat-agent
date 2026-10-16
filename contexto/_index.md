@@ -14,7 +14,7 @@
 | SPI / ranking | P1 944 (3°) → P2 781 (5°) → **P3 673 (4° de 5)**. Líder R 1,691 |
 | Situación P3 | Ingresos $34.4M · Contrib. neta $3.9M · MS unid. 14.1%. Todos clonaron specs |
 | Proyectos listos | **POMOXX** (Gen-X, $130) · POMOVE3 · POMOST3 |
-| Vodites | I+D ~$10M según el profesor → descartado por ahora. R y S arrancaron ($100k) |
+| Vodites | **PEMEGO** (Seguidores) arrancado en P4 con $100k · total $9.33M · coste base $250 · objetivo lanzar en P7. R y S arrancaron con $100k en P3 |
 
 ---
 

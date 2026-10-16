@@ -72,3 +72,9 @@
 - Vista con los escenarios A/B y los futuros con Vodites: `periodos/periodo_04/plan_r4.html`.
 
 > Nota: el mapa de percepción solo acepta valores enteros en los objetivos. La contribución neta proyectada para P4 baja a ≈ $7.5M por el TC de POMOVE3 y la liquidación del stock de MOVE.
+
+### Actualización (decisión del equipo)
+- MOST → **Modificar con POMOST3** (apunta al ideal de Gen-Z del próximo período; se acepta la pérdida de ~$190k por liquidar 15.4k u de stock).
+- Producción MOST: **150k** (sin stock inicial).
+- **I+D Vodites: PEMEGO** (Seguidores): resolución 50 · energía 62 · impacto ecológico 23 · conectividad 5 · apps 41. Coste base mín. $250. Presupuesto total estimado $9,330k. **$100k asignados en P4** para marcar posición (como R y S en P3). Completar en P5–P6 → lanzamiento P7.
+- Presupuesto libre tras el cambio: **+$86k**.
